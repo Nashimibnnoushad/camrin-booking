@@ -1,0 +1,193 @@
+<header [ngClass]="[activeRoute === '' ? 'header main-header' : 'header']">
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="container-fluid">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-12 col-md-4">
+                    <div class="header-top-left">
+                        <ul class="nav">
+                            <!-- Flag -->
+                            <li class="nav-item dropdown has-arrow flag-nav">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" routerLinl="#" role="button">
+                                    <img src="assets/img/flags/us.png" alt="" height="20"> <span>English</span>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <img src="assets/img/flags/us.png" alt="" height="16"> English
+                                    </a>
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <img src="assets/img/flags/fr.png" alt="" height="16"> French
+                                    </a>
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <img src="assets/img/flags/es.png" alt="" height="16"> Spanish
+                                    </a>
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <img src="assets/img/flags/de.png" alt="" height="16"> German
+                                    </a>
+                                </div>
+                            </li>
+                            <!-- /Flag -->
+                        </ul>									
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <h3 class="offer-text">GET OFFER UPTO <span>25%</span> ON FIRST BOOKINGS</h3>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="header-top-right">
+                        <div class="social-icon">
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Top Header -->
+    <nav class="navbar navbar-expand-lg header-nav">
+        <div class="navbar-header">
+            <a id="mobile_btn" href="javascript:void(0);">
+                <span class="bar-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </a>
+            <a routerLink='/' class="navbar-brand logo">
+                <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+            </a>
+        </div>
+        <div class="main-menu-wrapper">
+            <div class="menu-header">
+                <a routerLink='/' class="menu-logo">
+                    <img src="assets/img/logo-small.png" class="img-fluid" alt="Logo">
+                </a>
+                <a id="menu_close" class="menu-close" href="javascript:void(0);">
+                    <i class="fas fa-times"></i>
+                </a>
+            </div>
+            <ul class="main-nav">
+                <li [ngClass]="[activeRoute === '' ? 'active' : '']">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="has-submenu" [ngClass]="[activeRoute === 'speakers' ? 'active' : '']">
+                    <a href="#">Speakers <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li [ngClass]="[active2Route === 'speakers-dashboard' ? 'active' : '']"><a routerLink='/speakers/speakers-dashboard'>speaker Dashboard</a></li>
+                        <li [ngClass]="[active2Route === 'events' ? 'active' : '']"><a routerLink='/speakers/events'>Events</a></li>
+                        <li [ngClass]="[active2Route === 'schedule-timings' ? 'active' : '']"><a routerLink='/speakers/schedule-timings'>Schedule Timing</a></li>
+                        <li [ngClass]="[active2Route === 'my-customers' ? 'active' : '']"><a routerLink='/speakers/my-customers'>customers List</a></li>
+                        <li [ngClass]="[active2Route === 'customer-profile' ? 'active' : '']"><a routerLink='/speakers/customer-profile'>customers Profile</a></li>
+                        <li [ngClass]="[active2Route === 'chat-speaker' ? 'active' : '']"><a routerLink='/speakers/chat-speaker'>Chat</a></li>
+                        <li [ngClass]="[active2Route === 'invoices' ? 'active' : '']"><a routerLink='/pages/invoices/invoices'>Invoices</a></li>
+                        <li [ngClass]="[active2Route === 'speaker-profile-settings' ? 'active' : '']"><a routerLink='/speakers/speaker-profile-settings'>Profile Settings</a></li>
+                        <li [ngClass]="[active2Route === 'reviews' ? 'active' : '']"><a routerLink='/speakers/reviews'>Reviews</a></li>
+                        <li [ngClass]="[active2Route === 'speaker-register' ? 'active' : '']"><a routerLink='/speakers/speaker-register'>speaker Register</a></li>
+                    </ul>
+                </li>	
+                <li class="has-submenu" [ngClass]="[activeRoute === 'customers' ? 'active' : '']">
+                    <a href="">Customers <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li class="has-submenu" [ngClass]="[active2Route === 'speakers' ? 'active' : '']">
+                            <a href="#">Speakers</a>
+                            <ul class="submenu">
+                                <li [ngClass]="[active3Route === 'map-grid' ? 'active' : '']"><a routerLink="/customers/speakers/map-grid">Map Grid</a></li>
+                                <li [ngClass]="[active3Route === 'map-list' ? 'active' : '']"><a routerLink="/customers/speakers/map-list">Map List</a></li>
+                            </ul>
+                        </li>
+                        <li [ngClass]="[active2Route === 'search' ? 'active' : '']"><a routerLink="/customers/search">Search speaker</a></li>
+                        <li [ngClass]="[active2Route === 'speaker-profile' ? 'active' : '']"><a routerLink="/customers/speaker-profile">speaker Profile</a></li>
+                        <li [ngClass]="[active2Route === 'booking' ? 'active' : '']"><a routerLink="/customers/booking">Booking</a></li>
+                        <li [ngClass]="[active2Route === 'checkout' ? 'active' : '']"><a routerLink="/customers/checkout">Checkout</a></li>
+                        <li [ngClass]="[active2Route === 'booking-success' ? 'active' : '']"><a routerLink="/customers/booking-success">Booking Success</a></li>
+                        <li [ngClass]="[active2Route === 'customer-dashboard' ? 'active' : '']"><a routerLink="/customers/customer-dashboard">Customer Dashboard</a></li>
+                        <li [ngClass]="[active2Route === 'favourites' ? 'active' : '']"><a routerLink="/customers/favourites">Favourites</a></li>
+                        <li [ngClass]="[active2Route === 'chat' ? 'active' : '']"><a routerLink="/customers/chat">Chat</a></li>
+                        <li [ngClass]="[active2Route === 'profile-settings' ? 'active' : '']"><a routerLink="/customers/profile-settings">Profile Settings</a></li>
+                        <li [ngClass]="[active2Route === 'change-password' ? 'active' : '']"><a routerLink="/customers/change-password">Change Password</a></li>
+                    </ul>
+                </li>	
+                <li class="has-submenu" [ngClass]="[activeRoute === 'pages' ? 'active' : '']">
+                    <a href="">pages <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li [ngClass]="[active2Route === 'voice-call' ? 'active' : '']"><a routerLink="/pages/voice-call">Voice Call</a></li>
+                        <li [ngClass]="[active2Route === 'video-call' ? 'active' : '']"><a routerLink="/pages/video-call">Video Call</a></li>
+                        <li [ngClass]="[active2Route === 'search' ? 'active' : '']"><a routerLink="/customers/search">Search speakers</a></li>
+                        <li [ngClass]="[active2Route === 'calendar' ? 'active' : '']"><a routerLink="/pages/calendar">Calendar</a></li>
+                        <li [ngClass]="[active2Route === 'components' ? 'active' : '']"><a routerLink="/pages/components">Components</a></li>
+                        <li class="has-submenu" [ngClass]="[active2Route === 'invoices' ? 'active' : '']">
+                            <a href="#">Invoices</a>
+                            <ul class="submenu">
+                                <li [ngClass]="[active3Route === 'invoices' ? 'active' : '']"><a routerLink="/pages/invoices/invoices">Invoices</a></li>
+                                <li [ngClass]="[active3Route === 'invoice-view' ? 'active' : '']"><a routerLink="/pages/invoices/invoice-view">Invoice View</a></li>
+                            </ul>
+                        </li>
+                        <li [ngClass]="[active2Route === 'blank-page' ? 'active' : '']"><a routerLink="/pages/blank-page">Starter Page</a></li>
+                        <li [ngClass]="[active2Route === 'event-details' ? 'active' : '']"><a routerLink="/pages/event-details">Event Details</a></li>
+                        <li [ngClass]="[active2Route === 'login' ? 'active' : '']"><a routerLink="/pages/login">Login</a></li>
+                        <li [ngClass]="[active2Route === 'register' ? 'active' : '']"><a routerLink="/pages/register">Register</a></li>
+                        <li [ngClass]="[active2Route === 'forgot-password' ? 'active' : '']"><a routerLink="/pages/forgot-password">Forgot Password</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu" [ngClass]="[activeRoute === 'blog' ? 'active' : '']">
+                    <a routerLink="">Blog <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li [ngClass]="[active2Route === 'blog-list' ? 'active' : '']"><a routerLink="/blog/blog-list">Blog List</a></li>
+                        <li [ngClass]="[active2Route === 'blog-grid' ? 'active' : '']"><a routerLink="/blog/blog-grid">Blog Grid</a></li>
+                        <li [ngClass]="[active2Route === 'blog-details' ? 'active' : '']"><a routerLink="/blog/blog-details">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li [hidden]="guestuser" class="nav-item align-items-center log-flx">
+                    <a class="nav-link header-login" routerLink="/pages/login">login / Signup </a>
+                </li>
+                <!-- User Menu -->
+				<li [hidden]="registereduser" class="nav-item dropdown has-arrow logged-item user-logged">
+					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+						<span class="user-img">
+							<img class="rounded-circle" src="assets/img/speakers/speaker-thumb-02.jpg" width="31" alt="Gennaro Weiner">
+						</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right">
+						<div class="user-header">
+							<div class="avatar avatar-sm">
+								<img src="assets/img/speakers/speaker-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+							</div>
+							<div class="user-text">
+								<h6>Wayte Barlow</h6>
+								<p class="text-muted mb-0">Speaker</p>
+							</div>
+						</div>
+						<a class="dropdown-item" routerLink='/speakers/speaker-dashboard'>Dashboard</a>
+						<a class="dropdown-item" routerLink='/speakers/speaker-profile-settings'>Profile Settings</a>
+						<a class="dropdown-item" routerLink='/pages/login'>Logout</a>
+					</div>
+				</li>
+				<!-- /User Menu -->
+            </ul>		 
+        </div>		 
+        <ul class="nav header-navbar-rht">
+            <li class="nav-item contact-item">
+                <a href="javascript:void(0);" class="header-contact-img">
+                    <img src="assets/img/mic-icon.png" alt="mic">
+                </a>
+                <a href="javascript:void(0);" class="header-contact-detail">
+                    <p class="contact-header">Your Bookings</p>
+                    <p class="contact-info-header"> $300</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
