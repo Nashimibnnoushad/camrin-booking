@@ -5,13 +5,15 @@ import { BlogGridComponent } from './blog-grid/blog-grid.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogComponent } from './blog.component';
 
-const routes: Routes = [{ path: '', component: BlogComponent,
-children: [
-  {path: 'blog-list', component: BlogListComponent, data: { breadcrumb: 'blog list' }},
-  {path: 'blog-grid', component: BlogGridComponent, data: { breadcrumb: 'blog grid' }},
-  {path: 'blog-details', component: BlogDetailsComponent, data: { breadcrumb: 'blog details' }}
-]
-}];
+const routes: Routes = [
+  { path: '', component: BlogComponent,
+    children: [
+      { path: 'blog-list', component: BlogListComponent },
+      { path: 'blog-grid', component: BlogGridComponent },
+      { path: 'blog-details', component: BlogDetailsComponent }
+    ]
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

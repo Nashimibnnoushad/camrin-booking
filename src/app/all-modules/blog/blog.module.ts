@@ -6,7 +6,6 @@ import { BlogComponent } from './blog.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogGridComponent } from './blog-grid/blog-grid.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
-import { BlogSidebarComponent } from './blog-sidebar/blog-sidebar.component';
 
 
 @NgModule({
@@ -14,8 +13,7 @@ import { BlogSidebarComponent } from './blog-sidebar/blog-sidebar.component';
     BlogComponent,
     BlogListComponent,
     BlogGridComponent,
-    BlogDetailsComponent,
-    BlogSidebarComponent
+    BlogDetailsComponent
   ],
   imports: [
     CommonModule,

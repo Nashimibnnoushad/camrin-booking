@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AllModulesRoutingModule } from './all-modules-routing.module';
 import { AllModulesComponent } from './all-modules.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { AllModulesComponent } from './all-modules.component';
   ],
   imports: [
     CommonModule,
-    AllModulesRoutingModule
+    AllModulesRoutingModule,
+    NgbModule
   ]
 })
 export class AllModulesModule { }

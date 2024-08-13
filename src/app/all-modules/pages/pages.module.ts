@@ -10,13 +10,13 @@ import { ComponentsComponent } from './components/components.component';
 import { InvoicesComponent } from './invoices/invoices.component';
 import { InvoiceViewComponent } from './invoice-view/invoice-view.component';
 import { BlankPageComponent } from './blank-page/blank-page.component';
-import { EventDetailsComponent } from './event-details/event-details.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { TermConditionComponent } from './term-condition/term-condition.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-import { FullCalendarModule } from '@fullcalendar/angular';
+import { TermConditionComponent } from './term-condition/term-condition.component';
+import { PricingPageComponent } from './pricing-page/pricing-page.component';
+import { PackagePageComponent } from './package-page/package-page.component';
 
 
 @NgModule({
@@ -29,17 +29,17 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     InvoicesComponent,
     InvoiceViewComponent,
     BlankPageComponent,
-    EventDetailsComponent,
     LoginComponent,
     RegisterComponent,
     ForgotPasswordComponent,
+    PrivacyPolicyComponent,
     TermConditionComponent,
-    PrivacyPolicyComponent
+    PricingPageComponent,
+    PackagePageComponent
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule,
-    FullCalendarModule
+    PagesRoutingModule
   ]
 })
 export class PagesModule { }

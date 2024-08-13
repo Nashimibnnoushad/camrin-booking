@@ -1,0 +1,99 @@
+ /* Custom Checkbox Style */
+ .custom-checkbox {
+    /* position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px; */
+    width: 100%;
+  }
+
+  .col-4 {
+    flex: 0 0 32.333333%;
+    max-width: 32.333333%;
+}
+  .custom-checkbox input[type="checkbox"] {
+    opacity: 0;
+    /* width: 0; */
+    height: 0;
+  }
+
+  .custom-checkbox .checkbox-checkmark {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #ccc;
+    border-radius: 4px;
+  }
+
+  .custom-checkbox input[type="checkbox"]:checked ~ .checkbox-checkmark {
+    background-color: #4caf50;
+  }
+
+  .custom-checkbox .checkbox-checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .custom-checkbox input[type="checkbox"]:checked ~ .checkbox-checkmark::after {
+    display: block;
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .number-input {
+    width: 35px;
+    height: 35px;
+    padding: 10px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 15px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s, background-color 0.3s;
+    float: right;
+  }
+  
+  .number-input:focus {
+    border-color: #007bff;
+    background: rgba(255, 255, 255, 0.8); /* Slightly more opaque on focus */
+    outline: none;
+  }
+  
+  .number-input::-webkit-inner-spin-button,
+  .number-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .number-input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  .event-card {
+    background-color: #807f7f;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    margin: 5px;
+  }
+  .features-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left !important;
+  }

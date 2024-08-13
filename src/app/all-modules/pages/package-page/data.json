@@ -1,0 +1,116 @@
+{
+    "selectedPackage": 
+        {
+            "packageName": "THIRD",
+            "eventType": "BRIDE AND GROOM",
+            "recommended": false,
+            "actualPrice": 343000.0,
+            "offerPrice": 274000.0,
+            "events": [
+                {
+                    "eventName": "ENGAGEMENT",
+                    "packageId": "6199650",
+                    "services": [
+                        {
+                            "service": "Candid Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Candid Videographer",
+                            "count": 2
+                        },
+                        {
+                            "service": "Traditional Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Traditional Videographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Helicam",
+                            "count": 1
+                        },
+                        {
+                            "service": "Motion Candid Video",
+                            "count": 2
+                        }
+                    ]
+                },
+                {
+                    "eventName": "WEDDING",
+                    "packageId": "5489477",
+                    "services": [
+                        {
+                            "service": "Candid Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Candid Videographer",
+                            "count": 2
+                        },
+                        {
+                            "service": "Traditional Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Traditional Videographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Helicam",
+                            "count": 1
+                        },
+                        {
+                            "service": "Motion Candid Video",
+                            "count": 2
+                        }
+                    ]
+                }
+            ] ,
+            "deliverablePricingSummaryList": [
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "80 LEAF 140 PAGES MAGAZINE ALBUM",
+                    "price": 20000.0,
+                    "count": 2
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "INSTAGRAM REELS",
+                    "price": 1000.0,
+                    "count": 8
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "HIGHLIGHT VIDEO",
+                    "price": 10000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "FULL LENGTH VIDEO",
+                    "price": 12000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "EDITED PHOTOS 75 NOS",
+                    "price": 15000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "PHOTO FRAMES 8 NOS",
+                    "price": 8000.0,
+                    "count": 1
+                }
+            ]
+        }
+}

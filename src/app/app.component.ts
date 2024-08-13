@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router, Event, NavigationEnd, NavigationStart } from '@angular/router';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
+import { NavigationStart, Router, Event } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,46 +8,37 @@ import { Router, Event, NavigationEnd, NavigationStart } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'events';
+  title = 'college';
   url!: string;
   url1!: string;
-  url2!: string;
   activeRoute!: string;
   active2Route!: string;
-  active3Route!: string;
-  loadFooter = false;
   hideFooter: boolean = false;
-
   constructor(private router: Router) { 
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         const url = event.url.split("/");
         this.url = url[1];
         this.url1 = url[2];
-        this.url2 = url[3];
         this.activeRoute = this.url;
         this.active2Route = this.url1;
-        this.active3Route = this.url2;
         const body = document.getElementsByTagName('body')[0];
-        if ( this.active2Route === "chat-speaker" || this.active3Route === "map-grid" || this.active3Route === "map-list" || this.active2Route === "chat" || this.active2Route === "voice-call" || this.active2Route === "video-call") {
-          this.loadFooter = false;
+        if ( this.active2Route === "chat-instructor" || this.active2Route === "map-grid" || this.active2Route === "map-list" || this.active2Route === "chat" || this.active2Route === "voice-call" || this.active2Route === "video-call") {
+          this.hideFooter = true;
         } else {
-          this.loadFooter = true;
+          this.hideFooter = false;
         }
-        if ( this.active2Route === "speakers-register" || this.active2Route === "login" || this.active2Route === "register" || this.active2Route === "forgot-password") {
+        if ( this.active2Route === "instructor-register" || this.active2Route === "login" || this.active2Route === "register" || this.active2Route === "forgot-password") {
           body.classList.add('account-page');
         } else {
           body.classList.remove('account-page');
         }
-        if ( this.active2Route === "chat" || this.active2Route === "chat-speaker") {
+        if ( this.active2Route === "chat" || this.active2Route === "chat-instructor") {
           body.classList.add('chat-page');
         } else {
           body.classList.remove('chat-page');
         }
       }
     });
-  }
-  ngOnInit() {
-    
   }
 }

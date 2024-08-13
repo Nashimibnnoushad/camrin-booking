@@ -1,0 +1,735 @@
+{
+    "eventName": null,
+    "eventDate": null,
+    "packageId": 0,
+    "diamondPackageList": [
+        {
+            "packageId": 4400124,
+            "eventDate": "2024-09-21",
+            "totalDeliverablePrice": 61000.0,
+            "packageTotalForAllFunction": 406800.0,
+            "eventName": "WEDDING",
+            "eventType": "BRIDE AND GROOM",
+            "packageName": "THIRD",
+            "candidPhotographer": 1,
+            "candidVideographer": 1,
+            "traditionalPhoto": 1,
+            "traditionalVideo": 2,
+            "helicam": 1,
+            "liveStreaming": true,
+            "motionCandidVideo": 1,
+            "price": 138400.0,
+            "totalEventPrice": 199400.0,
+            "deliverablePricingSummaryList": [
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "70 LEAF 140 PAGES MAGAZINE ALBUM",
+                    "price": 15000.0,
+                    "count": 2
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "INSTAGRAM REELS",
+                    "price": 1000.0,
+                    "count": 8
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "HIGHLIGHT VIDEO",
+                    "price": 10000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "FULL LENGTH VIDEO",
+                    "price": 12000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "EDITED PHOTOS 75 NOS",
+                    "price": 15000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "PHOTO FRAMES 8 NOS",
+                    "price": 8000.0,
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "packageId": 7840404,
+            "eventDate": "2024-09-24",
+            "totalDeliverablePrice": 69000.0,
+            "packageTotalForAllFunction": 406800.0,
+            "eventName": "ENGAGEMENT",
+            "eventType": "BRIDE AND GROOM",
+            "packageName": "THIRD",
+            "candidPhotographer": 1,
+            "candidVideographer": 1,
+            "traditionalPhoto": 1,
+            "traditionalVideo": 2,
+            "helicam": 1,
+            "liveStreaming": true,
+            "motionCandidVideo": 1,
+            "price": 138400.0,
+            "totalEventPrice": 207400.0,
+            "deliverablePricingSummaryList": [
+                {
+                    "packageName": "THIRD",
+                    "event": "2",
+                    "deliverableName": "70 LEAF 140 PAGES MAGAZINE ALBUM",
+                    "price": 15000.0,
+                    "count": 2
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "2",
+                    "deliverableName": "INSTAGRAM REELS",
+                    "price": 1000.0,
+                    "count": 8
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "2",
+                    "deliverableName": "HIGHLIGHT VIDEO",
+                    "price": 10000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "2",
+                    "deliverableName": "FULL LENGTH VIDEO",
+                    "price": 12000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "2",
+                    "deliverableName": "EDITED PHOTOS 75 NOS",
+                    "price": 15000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "2",
+                    "deliverableName": "PHOTO FRAMES 8 NOS",
+                    "price": 8000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "2",
+                    "deliverableName": "PHOTO FRAMES 8 NOS",
+                    "price": 8000.0,
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "goldPackageList": [
+        {
+            "packageId": 8910830,
+            "eventDate": "2024-09-21",
+            "totalDeliverablePrice": 49500.0,
+            "packageTotalForAllFunction": 258000.0,
+            "eventName": "WEDDING",
+            "eventType": "BRIDE AND GROOM",
+            "packageName": "SECOND",
+            "candidPhotographer": 1,
+            "candidVideographer": 1,
+            "traditionalPhoto": 1,
+            "traditionalVideo": 1,
+            "helicam": 1,
+            "liveStreaming": false,
+            "motionCandidVideo": 0,
+            "price": 74500.0,
+            "totalEventPrice": 124000.0,
+            "deliverablePricingSummaryList": [
+                {
+                    "packageName": "SECOND",
+                    "event": "1",
+                    "deliverableName": "60 LEAF 120 PAGES MAGAZINE ALBUM",
+                    "price": 12500.0,
+                    "count": 2
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "1",
+                    "deliverableName": "INSTAGRAM REELS",
+                    "price": 1000.0,
+                    "count": 4
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "1",
+                    "deliverableName": "HIGHLIGHT VIDEO",
+                    "price": 10000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "1",
+                    "deliverableName": "FULL LENGTH VIDEO",
+                    "price": 12000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "1",
+                    "deliverableName": "EDITED PHOTOS 50 NOS",
+                    "price": 10000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "1",
+                    "deliverableName": "PHOTO FRAMES 4 NOS",
+                    "price": 4000.0,
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "packageId": 1160971,
+            "eventDate": "2024-09-24",
+            "totalDeliverablePrice": 59500.0,
+            "packageTotalForAllFunction": 258000.0,
+            "eventName": "ENGAGEMENT",
+            "eventType": "BRIDE AND GROOM",
+            "packageName": "SECOND",
+            "candidPhotographer": 1,
+            "candidVideographer": 1,
+            "traditionalPhoto": 1,
+            "traditionalVideo": 1,
+            "helicam": 1,
+            "liveStreaming": false,
+            "motionCandidVideo": 0,
+            "price": 74500.0,
+            "totalEventPrice": 134000.0,
+            "deliverablePricingSummaryList": [
+                {
+                    "packageName": "SECOND",
+                    "event": "2",
+                    "deliverableName": "60 LEAF 120 PAGES MAGAZINE ALBUM",
+                    "price": 12500.0,
+                    "count": 2
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "2",
+                    "deliverableName": "INSTAGRAM REELS",
+                    "price": 1000.0,
+                    "count": 4
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "2",
+                    "deliverableName": "HIGHLIGHT VIDEO",
+                    "price": 10000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "2",
+                    "deliverableName": "FULL LENGTH VIDEO",
+                    "price": 12000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "2",
+                    "deliverableName": "EDITED PHOTOS 50 NOS",
+                    "price": 10000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "2",
+                    "deliverableName": "PHOTO FRAMES 4 NOS",
+                    "price": 4000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "2",
+                    "deliverableName": "PREE VIDEO",
+                    "price": 5000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "2",
+                    "deliverableName": "PREE PHOTO",
+                    "price": 5000.0,
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "silverPackageList": [
+        {
+            "packageId": 3060587,
+            "eventDate": "2024-09-21",
+            "totalDeliverablePrice": 40500.0,
+            "packageTotalForAllFunction": 202200.0,
+            "eventName": "WEDDING",
+            "eventType": "BRIDE AND GROOM",
+            "packageName": "BASE",
+            "candidPhotographer": 1,
+            "candidVideographer": 1,
+            "traditionalPhoto": 1,
+            "traditionalVideo": 1,
+            "helicam": 0,
+            "liveStreaming": false,
+            "motionCandidVideo": 0,
+            "price": 60600.0,
+            "totalEventPrice": 101100.0,
+            "deliverablePricingSummaryList": [
+                {
+                    "packageName": "BASE",
+                    "event": "1",
+                    "deliverableName": "40 LEAF 80 PAGES MAGAZINE ALBUM",
+                    "price": 9500.0,
+                    "count": 2
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "1",
+                    "deliverableName": "INSTAGRAM REELS",
+                    "price": 1000.0,
+                    "count": 2
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "1",
+                    "deliverableName": "HIGHLIGHT VIDEO",
+                    "price": 10000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "1",
+                    "deliverableName": "FULL LENGTH VIDEO",
+                    "price": 12000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "1",
+                    "deliverableName": "PHOTO FRAMES 2 NOS",
+                    "price": 2000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "1",
+                    "deliverableName": "EDITED PHOTOS 25 NOS",
+                    "price": 6000.0,
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "packageId": 2990714,
+            "eventDate": "2024-09-24",
+            "totalDeliverablePrice": 40500.0,
+            "packageTotalForAllFunction": 202200.0,
+            "eventName": "ENGAGEMENT",
+            "eventType": "BRIDE AND GROOM",
+            "packageName": "BASE",
+            "candidPhotographer": 1,
+            "candidVideographer": 1,
+            "traditionalPhoto": 1,
+            "traditionalVideo": 1,
+            "helicam": 0,
+            "liveStreaming": false,
+            "motionCandidVideo": 0,
+            "price": 60600.0,
+            "totalEventPrice": 101100.0,
+            "deliverablePricingSummaryList": [
+                {
+                    "packageName": "BASE",
+                    "event": "2",
+                    "deliverableName": "40 LEAF 80 PAGES MAGAZINE ALBUM",
+                    "price": 9500.0,
+                    "count": 2
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "2",
+                    "deliverableName": "INSTAGRAM REELS",
+                    "price": 1000.0,
+                    "count": 2
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "2",
+                    "deliverableName": "HIGHLIGHT VIDEO",
+                    "price": 10000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "2",
+                    "deliverableName": "FULL LENGTH VIDEO",
+                    "price": 12000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "2",
+                    "deliverableName": "PHOTO FRAMES 2 NOS",
+                    "price": 2000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "2",
+                    "deliverableName": "EDITED PHOTOS 25 NOS",
+                    "price": 6000.0,
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "summarizePackages": [
+        {
+            "packageName": "THIRD",
+            "eventType": "BRIDE AND GROOM",
+            "recommended": false,
+            "actualPrice": 343000.0,
+            "offerPrice": 274000.0,
+            "events": [
+                {
+                    "eventName": "ENGAGEMENT",
+                    "packageId": "6199650",
+                    "services": [
+                        {
+                            "service": "Candid Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Candid Videographer",
+                            "count": 2
+                        },
+                        {
+                            "service": "Traditional Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Traditional Videographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Helicam",
+                            "count": 1
+                        },
+                        {
+                            "service": "Motion Candid Video",
+                            "count": 2
+                        }
+                    ]
+                },
+                {
+                    "eventName": "WEDDING",
+                    "packageId": "5489477",
+                    "services": [
+                        {
+                            "service": "Candid Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Candid Videographer",
+                            "count": 2
+                        },
+                        {
+                            "service": "Traditional Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Traditional Videographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Helicam",
+                            "count": 1
+                        },
+                        {
+                            "service": "Motion Candid Video",
+                            "count": 2
+                        }
+                    ]
+                }
+            ] ,
+            "deliverablePricingSummaryList": [
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "80 LEAF 140 PAGES MAGAZINE ALBUM",
+                    "price": 20000.0,
+                    "count": 2
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "INSTAGRAM REELS",
+                    "price": 1000.0,
+                    "count": 8
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "HIGHLIGHT VIDEO",
+                    "price": 10000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "FULL LENGTH VIDEO",
+                    "price": 12000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "EDITED PHOTOS 75 NOS",
+                    "price": 15000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "THIRD",
+                    "event": "1",
+                    "deliverableName": "PHOTO FRAMES 8 NOS",
+                    "price": 8000.0,
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "packageName": "BASE",
+            "eventType": "BRIDE AND GROOM",
+            "recommended": false,
+            "actualPrice": 239200.0,
+            "offerPrice": 191360.0,
+            "events": [
+                {
+                    "eventName": "ENGAGEMENT",
+                    "packageId": "4239982",
+                    "services": [
+                        {
+                            "service": "Candid Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Candid Videographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Traditional Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Traditional Videographer",
+                            "count": 1
+                        }
+                    ]
+                },
+                {
+                    "eventName": "WEDDING",
+                    "packageId": "3549844",
+                    "services": [
+                        {
+                            "service": "Candid Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Candid Videographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Traditional Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Traditional Videographer",
+                            "count": 1
+                        }
+                    ]
+                }
+            ],
+            "deliverablePricingSummaryList": [
+                {
+                    "packageName": "BASE",
+                    "event": "1",
+                    "deliverableName": "50 LEAF 80 PAGES MAGAZINE ALBUM",
+                    "price": 13500.0,
+                    "count": 2
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "1",
+                    "deliverableName": "INSTAGRAM REELS",
+                    "price": 1000.0,
+                    "count": 2
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "1",
+                    "deliverableName": "HIGHLIGHT VIDEO",
+                    "price": 10000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "1",
+                    "deliverableName": "FULL LENGTH VIDEO",
+                    "price": 12000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "1",
+                    "deliverableName": "PHOTO FRAMES 2 NOS",
+                    "price": 2000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "BASE",
+                    "event": "1",
+                    "deliverableName": "EDITED PHOTOS 25 NOS",
+                    "price": 6000.0,
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "packageName": "SECOND",
+            "eventType": "BRIDE AND GROOM",
+            "recommended": true,
+            "actualPrice": 313000.0,
+            "offerPrice": 249900.0,
+            "events": [
+                {
+                    "eventName":"ENGAGEMENT",
+                    "packageId": "2920330",
+                    "services": [
+                        {
+                            "service": "Candid Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Candid Videographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Traditional Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Traditional Videographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Helicam",
+                            "count": 1
+                        },
+                        {
+                            "service": "Motion Candid Video",
+                            "count": 1
+                        }
+                    ]
+                },
+                {
+                    "eventName": "WEDDING",
+                    "packageId": "5300166",
+                    "services": [
+                        {
+                            "service": "Candid Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Candid Videographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Traditional Photographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Traditional Videographer",
+                            "count": 1
+                        },
+                        {
+                            "service": "Helicam",
+                            "count": 1
+                        },
+                        {
+                            "service": "Motion Candid Video",
+                            "count": 1
+                        }
+                    ]
+                }
+            ],
+            "deliverablePricingSummaryList": [
+                {
+                    "packageName": "SECOND",
+                    "event": "1",
+                    "deliverableName": "70 LEAF 120 PAGES MAGAZINE ALBUM",
+                    "price": 18500.0,
+                    "count": 2
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "1",
+                    "deliverableName": "INSTAGRAM REELS",
+                    "price": 1000.0,
+                    "count": 4
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "1",
+                    "deliverableName": "HIGHLIGHT VIDEO",
+                    "price": 10000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "1",
+                    "deliverableName": "FULL LENGTH VIDEO",
+                    "price": 12000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "1",
+                    "deliverableName": "EDITED PHOTOS 50 NOS",
+                    "price": 10000.0,
+                    "count": 1
+                },
+                {
+                    "packageName": "SECOND",
+                    "event": "1",
+                    "deliverableName": "PHOTO FRAMES 4 NOS",
+                    "price": 4000.0,
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "silverTotalPrice": 202200.0,
+    "goldTotalPrice": 258000.0,
+    "diamondTotalPrice": 406800.0,
+    "silverTotalPriceIncludingDiscount": 202200.0,
+    "goldTotalPriceIncludingDiscount": 258000.0,
+    "diamondTotalPriceIncludingDiscount": 406800.0
+}

@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "1f84cd10-ff48-4e79-90d5-a83c5809a4ab"
+    "analytics": false
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "events": {
+    "college": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/events",
+            "outputPath": "dist/college",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -34,18 +34,18 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css",
-              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
-              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/slick-carousel/slick/slick.scss",
               "node_modules/select2/dist/css/select2.min.css",
-              "node_modules/ng2-daterangepicker/assets/daterangepicker.css",
               "node_modules/fullcalendar/main.min.css",
-              "src/assets/css/style.css"
+              "node_modules/ng2-daterangepicker/assets/daterangepicker.css",
+              "src/assets/css/styles.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js",
               "node_modules/select2/dist/js/select2.min.js",
               "node_modules/fullcalendar/main.min.js"
             ],
@@ -79,8 +79,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "1mb",
-                  "maximumError": "2mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "3mb"
                 }
               ]
             }
@@ -90,18 +90,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "events:build"
+            "browserTarget": "college:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "events:build:production"
+              "browserTarget": "college:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "events:build"
+            "browserTarget": "college:build"
           }
         },
         "test": {
@@ -116,9 +116,7 @@
               "src/assets"
             ],
             "styles": [
-              "../node_modules/font-awesome/css/font-awesome.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/assets/css/style.css"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -140,16 +138,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "events:serve"
+            "devServerTarget": "college:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "events:serve:production"
+              "devServerTarget": "college:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "events"
+  "defaultProject": "college"
 }

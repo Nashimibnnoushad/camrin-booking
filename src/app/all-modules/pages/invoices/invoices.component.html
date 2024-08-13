@@ -1,22 +1,40 @@
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-12">
+                <nav aria-label="breadcrumb" class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a routerLink='/'>Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Invoices</li>
+                    </ol>
+                </nav>
+                <h2 class="breadcrumb-title">Invoices</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Breadcrumb -->
+
 <!-- Page Content -->
 <div class="content">
     <div class="container">
 
         <div class="row">
-            <div class="col-md-4 col-lg-4 col-xl-3 theiaStickySidebar">
+            <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
             
                 <!-- Profile Sidebar -->
                 <div class="profile-sidebar">
                     <div class="widget-profile pro-widget-content">
                         <div class="profile-info-widget">
-                            <a href="#" class="booking-doc-img">
-                                <img src="assets/img/speakers/speaker-thumb-02.jpg" alt="User Image">
+                            <a href="#" class="booking-pro-img">
+                                <img src="assets/img/instructors/instructor-thumb-01.jpg" alt="User Image">
                             </a>
                             <div class="profile-det-info">
-                                <h3>Wayte Barlow</h3>
+                                <h3>David Lee</h3>
                                 
                                 <div class="customer-details">
-                                    <h5 class="mb-0">MCA, BE - 10+ Years Experience</h5>
+                                    <h5 class="mb-0">Aerospace Engineering</h5>
                                 </div>
                             </div>
                         </div>
@@ -25,68 +43,68 @@
                         <nav class="dashboard-menu">
                             <ul>
                                 <li>
-                                    <a routerLink='/speakers/speakers-dashboard'>
+                                    <a routerLink='/instructors/instructor-dashboard'>
                                         <i class="fas fa-columns"></i>
                                         <span>Dashboard</span>
                                     </a>
-                                </li>											
+                                </li>
                                 <li>
-                                    <a routerLink='/speakers/events'>
+                                    <a routerLink='/instructors/appointments'>
                                         <i class="fas fa-calendar-check"></i>
-                                        <span>Events</span>
+                                        <span>Appointments</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a routerLink='/speakers/my-customers'>
+                                    <a routerLink='/instructors/my-student'>
                                         <i class="fas fa-user-injured"></i>
-                                        <span>My customers</span>
+                                        <span>My Student</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a routerLink='/speakers/schedule-timings'>
+                                    <a routerLink='/instructors/schedule-timings'>
                                         <i class="fas fa-hourglass-start"></i>
                                         <span>Schedule Timings</span>
                                     </a>
                                 </li>
                                 <li class="active">
-                                    <a routerLink="./pages/invoices">
+                                    <a routerLink='/pages/invoices'>
                                         <i class="fas fa-file-invoice"></i>
                                         <span>Invoices</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a routerLink="/speakers/reviews">
+                                    <a routerLink='/instructors/reviews'>
                                         <i class="fas fa-star"></i>
                                         <span>Reviews</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a routerLink="/speakers/chat-speaker">
+                                    <a routerLink='/instructors/chat-instructor'>
                                         <i class="fas fa-comments"></i>
                                         <span>Message</span>
                                         <small class="unread-msg">23</small>
                                     </a>
                                 </li>
                                 <li>
-                                    <a routerLink="/speakers/speaker-profile-settings">
+                                    <a routerLink='/instructors/instructor-profile-settings'>
                                         <i class="fas fa-user-cog"></i>
                                         <span>Profile Settings</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a routerLink="/speakers/social-media">
+                                    <a routerLink='/instructors/social-media'>
                                         <i class="fas fa-share-alt"></i>
                                         <span>Social Media</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a routerLink="/speakers/speaker-change-password">
+                                    <a routerLink='/instructors/instructor-change-password'>
                                         <i class="fas fa-lock"></i>
                                         <span>Change Password</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a routerLink="/">
+                                    <a routerLink='/'>
                                         <i class="fas fa-sign-out-alt"></i>
                                         <span>Logout</span>
                                     </a>
@@ -98,7 +116,7 @@
                 <!-- /Profile Sidebar -->
                 
             </div>
-            <div class="col-md-8 col-lg-8 col-xl-9">
+            <div class="col-md-7 col-lg-8 col-xl-9">
                 <div class="card card-table">
                     <div class="card-body">
                     
@@ -108,7 +126,7 @@
                                 <thead>
                                     <tr>
                                         <th>Invoice No</th>
-                                        <th>Customer</th>
+                                        <th>Student</th>
                                         <th>Amount</th>
                                         <th>Paid On</th>
                                         <th></th>
@@ -117,21 +135,21 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <a routerLink="/pages/invoices/invoice-view">#INV-0010</a>
+                                            <a routerLink='/pages/invoice-view'>#INV-0010</a>
                                         </td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a routerLink="/speakers/customer-profile" class="avatar avatar-sm mr-2">
-                                                    <img class="avatar-img rounded-circle" src="assets/img/customers/customer.jpg" alt="User Image">
+                                                <a routerLink='/instructors/student-profile' class="avatar avatar-sm mr-2">
+                                                    <img class="avatar-img rounded-circle" src="assets/img/student/student.jpg" alt="User Image">
                                                 </a>
-                                                <a routerLink="/speakers/customer-profile">Thyme Frierson <span>#PT0016</span></a>
+                                                <a routerLink='/instructors/student-profile'>Richard Wilson <span>#PT0016</span></a>
                                             </h2>
                                         </td>
                                         <td>$450</td>
-                                        <td>14 Nov 2020</td>
+                                        <td>14 Nov 2019</td>
                                         <td class="text-right">
                                             <div class="table-action">
-                                                <a routerLink="/pages/invoices/invoice-view" class="btn btn-sm bg-info-light">
+                                                <a routerLink='/pages/invoice-view' class="btn btn-sm bg-info-light">
                                                     <i class="far fa-eye"></i> View
                                                 </a>
                                                 <a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
@@ -142,21 +160,21 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <a routerLink="/pages/invoices/invoice-view">#INV-0009</a>
+                                            <a routerLink='/pages/invoice-view'>#INV-0009</a>
                                         </td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a routerLink="/speakers/customer-profile" class="avatar avatar-sm mr-2">
-                                                    <img class="avatar-img rounded-circle" src="assets/img/customers/customer1.jpg" alt="User Image">
+                                                <a routerLink='/instructors/student-profile' class="avatar avatar-sm mr-2">
+                                                    <img class="avatar-img rounded-circle" src="assets/img/student/student-01.jpg" alt="User Image">
                                                 </a>
-                                                <a routerLink="/speakers/customer-profile">Cedrica Large <span>#PT0001</span></a>
+                                                <a routerLink='/instructors/student-profile'>Charlene Reed <span>#PT0001</span></a>
                                             </h2>
                                         </td>
                                         <td>$200</td>
-                                        <td>13 Nov 2020</td>
+                                        <td>13 Nov 2019</td>
                                         <td class="text-right">
                                             <div class="table-action">
-                                                <a routerLink="/pages/invoices/invoice-view" class="btn btn-sm bg-info-light">
+                                                <a routerLink='/pages/invoice-view' class="btn btn-sm bg-info-light">
                                                     <i class="far fa-eye"></i> View
                                                 </a>
                                                 <a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
@@ -167,21 +185,21 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <a routerLink="/pages/invoices/invoice-view">#INV-0008</a>
+                                            <a routerLink='/pages/invoice-view'>#INV-0008</a>
                                         </td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a routerLink="/speakers/customer-profile" class="avatar avatar-sm mr-2">
-                                                    <img class="avatar-img rounded-circle" src="assets/img/customers/customer2.jpg" alt="User Image">
+                                                <a routerLink='/instructors/student-profile' class="avatar avatar-sm mr-2">
+                                                    <img class="avatar-img rounded-circle" src="assets/img/student/student-02.jpg" alt="User Image">
                                                 </a>
-                                                <a routerLink="/speakers/customer-profile">Warford Cowan <span>#PT0002</span></a>
+                                                <a routerLink='/instructors/student-profile'>Travis Trimble <span>#PT0002</span></a>
                                             </h2>
                                         </td>
                                         <td>$100</td>
-                                        <td>12 Nov 2020</td>
+                                        <td>12 Nov 2019</td>
                                         <td class="text-right">
                                             <div class="table-action">
-                                                <a routerLink="/pages/invoices/invoice-view" class="btn btn-sm bg-info-light">
+                                                <a routerLink='/pages/invoice-view' class="btn btn-sm bg-info-light">
                                                     <i class="far fa-eye"></i> View
                                                 </a>
                                                 <a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
@@ -192,21 +210,21 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <a routerLink="/pages/invoices/invoice-view">#INV-0007</a>
+                                            <a routerLink='/pages/invoice-view'>#INV-0007</a>
                                         </td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a routerLink="/speakers/customer-profile" class="avatar avatar-sm mr-2">
-                                                    <img class="avatar-img rounded-circle" src="assets/img/customers/customer3.jpg" alt="User Image">
+                                                <a routerLink='/instructors/student-profile' class="avatar avatar-sm mr-2">
+                                                    <img class="avatar-img rounded-circle" src="assets/img/student/student-03.jpg" alt="User Image">
                                                 </a>
-                                                <a routerLink="/speakers/customer-profile">Axe Gibson <span>#PT0003</span></a>
+                                                <a routerLink='/instructors/student-profile'>Carl Kelly <span>#PT0003</span></a>
                                             </h2>
                                         </td>
                                         <td>$350</td>
-                                        <td>11 Nov 2020</td>
+                                        <td>11 Nov 2019</td>
                                         <td class="text-right">
                                             <div class="table-action">
-                                                <a routerLink="/pages/invoices/invoice-view" class="btn btn-sm bg-info-light">
+                                                <a routerLink='/pages/invoice-view' class="btn btn-sm bg-info-light">
                                                     <i class="far fa-eye"></i> View
                                                 </a>
                                                 <a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
@@ -217,21 +235,21 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <a routerLink="/pages/invoices/invoice-view">#INV-0006</a>
+                                            <a routerLink='/pages/invoice-view'>#INV-0006</a>
                                         </td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a routerLink="/speakers/customer-profile" class="avatar avatar-sm mr-2">
-                                                    <img class="avatar-img rounded-circle" src="assets/img/customers/customer4.jpg" alt="User Image">
+                                                <a routerLink='/instructors/student-profile' class="avatar avatar-sm mr-2">
+                                                    <img class="avatar-img rounded-circle" src="assets/img/student/student-04.jpg" alt="User Image">
                                                 </a>
-                                                <a routerLink="/speakers/customer-profile">Mia Lerner <span>#PT0004</span></a>
+                                                <a routerLink='/instructors/student-profile'>Michelle Fairfax <span>#PT0004</span></a>
                                             </h2>
                                         </td>
                                         <td>$275</td>
-                                        <td>10 Nov 2020</td>
+                                        <td>10 Nov 2019</td>
                                         <td class="text-right">
                                             <div class="table-action">
-                                                <a routerLink="/pages/invoices/invoice-view" class="btn btn-sm bg-info-light">
+                                                <a routerLink='/pages/invoice-view' class="btn btn-sm bg-info-light">
                                                     <i class="far fa-eye"></i> View
                                                 </a>
                                                 <a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
@@ -242,21 +260,21 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <a routerLink="/pages/invoices/invoice-view">#INV-0005</a>
+                                            <a routerLink='/pages/invoice-view'>#INV-0005</a>
                                         </td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a routerLink="/speakers/customer-profile" class="avatar avatar-sm mr-2">
-                                                    <img class="avatar-img rounded-circle" src="assets/img/customers/customer5.jpg" alt="User Image">
+                                                <a routerLink='/instructors/student-profile' class="avatar avatar-sm mr-2">
+                                                    <img class="avatar-img rounded-circle" src="assets/img/student/student-05.jpg" alt="User Image">
                                                 </a>
-                                                <a routerLink="/speakers/customer-profile">Secorra Dowling <span>#PT0005</span></a>
+                                                <a routerLink='/instructors/student-profile'>Gina Moore <span>#PT0005</span></a>
                                             </h2>
                                         </td>
                                         <td>$600</td>
-                                        <td>9 Nov 2020</td>
+                                        <td>9 Nov 2019</td>
                                         <td class="text-right">
                                             <div class="table-action">
-                                                <a routerLink="/pages/invoices/invoice-view" class="btn btn-sm bg-info-light">
+                                                <a routerLink='/pages/invoice-view' class="btn btn-sm bg-info-light">
                                                     <i class="far fa-eye"></i> View
                                                 </a>
                                                 <a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
@@ -267,21 +285,21 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <a routerLink="/pages/invoices/invoice-view">#INV-0004</a>
+                                            <a routerLink='/pages/invoice-view'>#INV-0004</a>
                                         </td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a routerLink="/speakers/customer-profile" class="avatar avatar-sm mr-2">
-                                                    <img class="avatar-img rounded-circle" src="assets/img/customers/customer6.jpg" alt="User Image">
+                                                <a routerLink='/instructors/student-profile' class="avatar avatar-sm mr-2">
+                                                    <img class="avatar-img rounded-circle" src="assets/img/student/student-06.jpg" alt="User Image">
                                                 </a>
-                                                <a routerLink="/speakers/customer-profile">Ellie Kent <span>#PT0006</span></a>
+                                                <a routerLink='/instructors/student-profile'>Elsie Gilley <span>#PT0006</span></a>
                                             </h2>
                                         </td>
                                         <td>$50</td>
-                                        <td>8 Nov 2020</td>
+                                        <td>8 Nov 2019</td>
                                         <td class="text-right">
                                             <div class="table-action">
-                                                <a routerLink="/pages/invoices/invoice-view" class="btn btn-sm bg-info-light">
+                                                <a routerLink='/pages/invoice-view' class="btn btn-sm bg-info-light">
                                                     <i class="far fa-eye"></i> View
                                                 </a>
                                                 <a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
@@ -292,21 +310,21 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <a routerLink="/pages/invoices/invoice-view">#INV-0003</a>
+                                            <a routerLink='/pages/invoice-view'>#INV-0003</a>
                                         </td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a routerLink="/speakers/customer-profile" class="avatar avatar-sm mr-2">
-                                                    <img class="avatar-img rounded-circle" src="assets/img/customers/customer7.jpg" alt="User Image">
+                                                <a routerLink='/instructors/student-profile' class="avatar avatar-sm mr-2">
+                                                    <img class="avatar-img rounded-circle" src="assets/img/student/student-07.jpg" alt="User Image">
                                                 </a>
-                                                <a routerLink="/speakers/customer-profile">Branice Grier <span>#PT0007</span></a>
+                                                <a routerLink='/instructors/student-profile'>Joan Gardner <span>#PT0007</span></a>
                                             </h2>
                                         </td>
                                         <td>$400</td>
-                                        <td>7 Nov 2020</td>
+                                        <td>7 Nov 2019</td>
                                         <td class="text-right">
                                             <div class="table-action">
-                                                <a routerLink="/pages/invoices/invoice-view" class="btn btn-sm bg-info-light">
+                                                <a routerLink='/pages/invoice-view' class="btn btn-sm bg-info-light">
                                                     <i class="far fa-eye"></i> View
                                                 </a>
                                                 <a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
@@ -317,21 +335,21 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <a routerLink="/pages/invoices/invoice-view">#INV-0002</a>
+                                            <a routerLink='/pages/invoice-view'>#INV-0002</a>
                                         </td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a routerLink="/speakers/customer-profile" class="avatar avatar-sm mr-2">
-                                                    <img class="avatar-img rounded-circle" src="assets/img/customers/customer8.jpg" alt="User Image">
+                                                <a routerLink='/instructors/student-profile' class="avatar avatar-sm mr-2">
+                                                    <img class="avatar-img rounded-circle" src="assets/img/student/student-08.jpg" alt="User Image">
                                                 </a>
-                                                <a routerLink="/speakers/customer-profile">Augy Naranjo <span>#PT0008</span></a>
+                                                <a routerLink='/instructors/student-profile'>Sofia Brient <span>#PT0008</span></a>
                                             </h2>
                                         </td>
                                         <td>$550</td>
-                                        <td>6 Nov 2020</td>
+                                        <td>6 Nov 2019</td>
                                         <td class="text-right">
                                             <div class="table-action">
-                                                <a routerLink="/pages/invoices/invoice-view" class="btn btn-sm bg-info-light">
+                                                <a routerLink='/pages/invoice-view' class="btn btn-sm bg-info-light">
                                                     <i class="far fa-eye"></i> View
                                                 </a>
                                                 <a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
@@ -342,21 +360,21 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <a routerLink="/pages/invoices/invoice-view">#INV-0001</a>
+                                            <a routerLink='/pages/invoice-view'>#INV-0001</a>
                                         </td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a routerLink="/speakers/customer-profile" class="avatar avatar-sm mr-2">
-                                                    <img class="avatar-img rounded-circle" src="assets/img/customers/customer9.jpg" alt="User Image">
+                                                <a routerLink='/instructors/student-profile' class="avatar avatar-sm mr-2">
+                                                    <img class="avatar-img rounded-circle" src="assets/img/student/student-09.jpg" alt="User Image">
                                                 </a>
-                                                <a routerLink="/speakers/customer-profile">Speero Dobbs <span>#PT0009</span></a>
+                                                <a routerLink='/instructors/student-profile'>Walter Roberson <span>#PT0009</span></a>
                                             </h2>
                                         </td>
                                         <td>$100</td>
-                                        <td>5 Nov 2020</td>
+                                        <td>5 Nov 2019</td>
                                         <td class="text-right">
                                             <div class="table-action">
-                                                <a routerLink="/pages/invoices/invoice-view" class="btn btn-sm bg-info-light">
+                                                <a routerLink='/pages/invoice-view' class="btn btn-sm bg-info-light">
                                                     <i class="far fa-eye"></i> View
                                                 </a>
                                                 <a href="javascript:void(0);" class="btn btn-sm bg-primary-light">

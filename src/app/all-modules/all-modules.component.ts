@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-declare var $: any; 
+declare var $: any;
 @Component({
   selector: 'app-all-modules',
   templateUrl: './all-modules.component.html',
@@ -10,21 +10,9 @@ export class AllModulesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // Floating Label
-
-    if($('.floating').length > 0 ){
-      $('.floating').on('focus blur', function (e: { type: string; }) {
-      $(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
-      }).trigger('blur');
-    }
     
-    if($('.select').length > 0) {
-      $('.select').select2({
-        minimumResultsForSearch: -1,
-        width: '100%'
-      });
-    }
-
+    // Textarea Text Count
+	
     var maxLength = 100;
     $('#review_desc').on('keyup change', function () {
       var length = $(this).val().length;
@@ -32,13 +20,30 @@ export class AllModulesComponent implements OnInit {
       $('#chars').text(length);
     });
 
+    // Floating Label
+
+    if($('.floating').length > 0 ){
+      $('.floating').on('focus blur', function (e: { type: string; }) {
+      $(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
+      }).trigger('blur');
+    }
+
+    // Tooltip
+    
+    if($('[data-toggle="tooltip"]').length > 0 ){
+      $('[data-toggle="tooltip"]').tooltip();
+    }
+
+    // Add More Hours
+	
     $(".hours-info").on('click','.trash', function () {
       $(this).closest('.hours-cont').remove();
       return false;
-    });
-
-    $(".add-hours").on('click', function () {
-		  var hourscontent = '<div class="row form-row hours-cont">' +
+      });
+  
+      $(".add-hours").on('click', function () {
+      
+      var hourscontent = '<div class="row form-row hours-cont">' +
         '<div class="col-12 col-md-10">' +
           '<div class="row form-row">' +
             '<div class="col-12 col-md-6">' +
@@ -70,33 +75,32 @@ export class AllModulesComponent implements OnInit {
         '<div class="col-12 col-md-2"><label class="d-md-block d-sm-none d-none">&nbsp;</label><a href="#" class="btn btn-danger trash"><i class="far fa-trash-alt"></i></a></div>' +
       '</div>';
       
-      $(".hours-info").append(hourscontent);
-      return false;
-        });
-      function resizeInnerDiv() {
-        var height = $(window).height();	
-        var header_height = $(".header").height();
-        var footer_height = $(".footer").height();
-        var setheight = height - header_height;
-        var trueheight = setheight - footer_height;
-        $(".content").css("min-height", trueheight);
-      }
-      
+          $(".hours-info").append(hourscontent);
+          return false;
+      });
+
+    // Content div min height set
+	
+    function resizeInnerDiv() {
+      var height = $(window).height();	
+      var header_height = $(".header").height();
+      var footer_height = $(".footer").height();
+      var setheight = height - header_height;
+      var trueheight = setheight - footer_height;
+      $(".content").css("min-height", trueheight);
+    }
+    
+    if($('.content').length > 0 ){
+      resizeInnerDiv();
+    }
+
+    $(window).resize(function(){
       if($('.content').length > 0 ){
         resizeInnerDiv();
       }
-    
-      $(window).resize(function(){
-        if($('.content').length > 0 ){
-          resizeInnerDiv();
-        }
-      });
-      // Tooltip
-    
-    if($('[data-toggle="tooltip"]').length > 0 ){
-      $('[data-toggle="tooltip"]').tooltip();
-    }
-      // Chat
+    });
+
+    // Chat
 
     var chatAppTarget = $('.chat-window');
     (function() {
@@ -117,14 +121,14 @@ export class AllModulesComponent implements OnInit {
       });
     })();
 
-    // Preloader	
+    // Preloader
+	
     $(window).on('load', function () {
       if($('#loader').length > 0) {
         $('#loader').delay(350).fadeOut('slow');
         $('body').delay(350).css({ 'overflow': 'visible' });
       }
     })
-
   }
 
 }

@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row" style="margin-top: 2%;">
+        <div class="col-12">
+            <div class="card enquiry-card" style="background-color: #11524126;">
+                <div class="card-body">
+                    <h4 class="card-title">Hi Nashim K N, Customize your Package - Gold</h4>
+                    <div class="education-info">
+                        <div class="row">
+                            <div class="col-3">
+                                <label><span style="font-weight: bolder;">Event Type: </span>Bride & Groom</label>
+                            </div>
+                            <div class="col-3">
+                                <label><span style="font-weight: bolder;">Event: </span>Engagement - Wedding - Reception</label>
+                            </div>
+                            <div class="col-3">
+                                <label><span style="font-weight: bolder;">Religion/Case: </span>Islam/Muslim</label>
+                            </div>
+                            <div class="col-3">
+                                <label><span style="font-weight: bolder;">Event Date: </span>14 Augest 2024</label>
+                            </div>
+                        </div> 
+                        
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <h5>Package Includes</h5>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-4 event-card">
+                                <div class="features-title">Common Deliverables</div>
+                                <div class="col-auto" *ngFor="let deliverable of selectedPackage.deliverablePricingSummaryList">
+                                    <label class="custom-checkbox">
+                                      <input type="checkbox" checked name={{deliverable.deliverableName}} (change)="onCheckboxClicked($event)">
+                                      <span class="checkbox-checkmark"></span> {{deliverable.deliverableName}}
+                                      <input type="number" id="number-input" class="number-input" value={{deliverable.count}} min="0">
+                                    </label>
+                              </div>
+                            </div>
+                            <div class="col-4 event-card" *ngFor="let event of selectedPackage.events">
+                                <div class="features-title">{{event.eventName}}</div>
+                                <div class="col-auto" *ngFor="let services of event.services">
+                                    <label class="custom-checkbox">
+                                      <input type="checkbox" checked name={{services.service}} (change)="onCheckboxClicked($event)">
+                                      <span class="checkbox-checkmark"></span> {{services.service}}
+                                      <input type="number" id="number-input" class="number-input" value={{services.count}} min="0">
+                                    </label>
+                              </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
