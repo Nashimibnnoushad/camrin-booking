@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Daterangepicker } from 'ng2-daterangepicker';
+import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { Daterangepicker } from 'ng2-daterangepicker';
     SlickCarouselModule,
     BrowserAnimationsModule,
     Daterangepicker,
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

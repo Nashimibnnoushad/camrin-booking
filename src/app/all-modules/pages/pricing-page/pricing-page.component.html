@@ -219,12 +219,12 @@
             <div class="actual-price" style="text-align: center !important;">₹{{package.actualPrice}}</div>
             <div class="price yellow" style="text-align: center !important;" >₹{{package.offerPrice}}</div>
             <div class="billing-cycle" style="text-align: center !important;">(Offer rates will vary depending on the event date)</div>
-            <button [ngClass]="{'select-btn': !package.recommended, 'select-btn-recommended': package.recommended}" routerLink='/pages/package-page'>Select</button>
+            <button [ngClass]="{'select-btn': !package.recommended, 'select-btn-recommended': package.recommended}" (click)="goToPackageCustomPage(package)">Select</button>
             <div class="features-title">Plan includes:</div>
             <div [ngClass]="{'event-card': !package.recommended, 'event-card-recommended': package.recommended}" *ngFor="let events of package.events">
                 <div class="features-title" style="text-align: center !important;">{{events.eventName}}</div>
                 <div [ngClass]="{'feature-exist': services.count > 0, 'feature-not-exist': services.count == 0}" *ngFor="let services of events.services">
-                  {{services.service}} - {{services.count}}
+                  {{services.service}} - {{services.count}}  
                 </div>
             </div>
             <div class="features-title mt-3">Deliverables:</div>

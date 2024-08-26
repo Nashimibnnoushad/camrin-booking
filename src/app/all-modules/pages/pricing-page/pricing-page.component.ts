@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import data from './data.json';
+// import data from './data.json';
+import { ApiService } from '../../../services.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-pricing-page',
   templateUrl: './pricing-page.component.html',
@@ -8,10 +11,18 @@ import data from './data.json';
 export class PricingPageComponent implements OnInit {
   
   customPackageAmount: number = 0;
-  packageList: any = data.summarizePackages
+  packageList: any
+  enquiryData: any = localStorage.getItem('camrinEnquiryData')
 
-  constructor() { 
-    console.log(data, 'data')
+  constructor(private apiService: ApiService, private router: Router) { 
+    this.getPackageDetails()
+  }
+
+  getPackageDetails(){
+    this.apiService.getPackages(JSON.parse(this.enquiryData)).subscribe((data:any) =>{
+      console.log(data, 'package details list')
+      this.packageList = data.summarizePackages
+    })
   }
 
   ngOnInit(): void {
@@ -23,5 +34,11 @@ export class PricingPageComponent implements OnInit {
     } else {
       this.customPackageAmount = this.customPackageAmount - 10000
     }
+  }
+
+  goToPackageCustomPage(selectedPackage:any){
+    localStorage.setItem('camrinSelectedPackage', JSON.stringify(selectedPackage))
+    const url = this.router.createUrlTree(['/pages/package-page']).toString();
+    window.location.href = url;
   }
 }

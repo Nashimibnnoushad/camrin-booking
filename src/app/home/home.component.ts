@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ApiService } from '../services.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from '../all-modules/pages/login/login.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,10 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   public daterange: any = {};
   hidebreadcrum : boolean= true;
+  eventList: any = [];
+  eventType: any = '';
+  caste: any = '';
   enquiryList: any = [{
-    eventType: '',
-    event: '',
-    caste: '',
+    eventId: '',
     eventDate: ''
   }]
 
@@ -29,16 +32,18 @@ export class HomeComponent implements OnInit {
     this.daterange.label = value.label;
   }
 
-  constructor() { }
+  constructor(private apiService: ApiService,private modalService: NgbModal) {
+    localStorage.removeItem('camrinToken')
+    localStorage.removeItem('camrinEnquiryData')
+    localStorage.removeItem('camrinSelectedPackage')
+   }
 
   
   addMoreEnquiry(){
     console.log(this.enquiryList,'entered')
     let tempArray = [...this.enquiryList]
     let newEnquiryData = {
-      eventType: '',
-      event: '',
-      caste: '',
+      eventId: '',
       eventDate: ''
     }
     tempArray.push(newEnquiryData)
@@ -58,7 +63,7 @@ export class HomeComponent implements OnInit {
     const select = event.target as HTMLSelectElement;
     let tempArray = [...this.enquiryList]
     let tempValue = tempArray[index]
-    tempValue.event = select.value
+    tempValue.eventId = select.value
     tempArray[index] = tempValue
     this.enquiryList = tempArray
     console.log('updated array:', this.enquiryList);
@@ -66,22 +71,13 @@ export class HomeComponent implements OnInit {
 
   onSelectEventTypeChange(event: Event, index:any): void {
     const select = event.target as HTMLSelectElement;
-    let tempArray = [...this.enquiryList]
-    let tempValue = tempArray[index]
-    tempValue.eventType = select.value
-    tempArray[index] = tempValue
-    this.enquiryList = tempArray
-    console.log('updated array:', this.enquiryList);
+    console.log(select.value,'event')
+    this.eventType = select.value
   }
 
   onSelectCasteChange(event: Event, index:any): void {
     const select = event.target as HTMLSelectElement;
-    let tempArray = [...this.enquiryList]
-    let tempValue = tempArray[index]
-    tempValue.caste = select.value
-    tempArray[index] = tempValue
-    this.enquiryList = tempArray
-    console.log('updated array:', this.enquiryList);
+    this.caste = select.value
   }
 
   SendDataonChange(event: any, index: any) {
@@ -92,6 +88,34 @@ export class HomeComponent implements OnInit {
     tempArray[index] = tempValue
     this.enquiryList = tempArray
     console.log('updated array:', this.enquiryList);
+  }
+
+  openLoginModal(): void {
+    const modalRef = this.modalService.open(LoginComponent, {
+      size: 'lg', // Large modal
+      centered: true // Center the modal
+    });
+    // Pass data to the modal instance
+    let sendData = {
+      'eventTypeId': this.eventType,
+      // 'caste': this.caste,
+      'eventDetails': this.enquiryList
+    }
+    modalRef.componentInstance.enquiryData = sendData;
+  }
+
+  getPackageDetails(){
+    // routerLink='/pages/pricing-page'
+    let sendData = {
+      'eventTypeId': this.eventType,
+      // 'caste': this.caste,
+      'eventDetails': this.enquiryList
+    }
+    console.log(this.eventType,sendData,'data')
+    this.apiService.getPackages(sendData).subscribe((data:any[]) =>{
+      console.log(data, 'package details list')
+    })
+          console.log(this.enquiryList,'enquirylist')                                                                                                                                                                                            
   }
 
 
@@ -236,70 +260,13 @@ export class HomeComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    // $(".education-info").on('click','.trash', function () {
-    //   $(this).closest('.education-cont').remove();
-    //   return false;
-    //   });
-  
-    //   $(".add-education").on('click', function () {
-      
-    //   var educationcontent = '<div class="row form-row education-cont">' +
-    //     '<div class="col-12 col-md-11 col-lg-11">' +
-    //       '<div class="row form-row">' +
-    //       '<div class="col-12 col-md-3 col-lg-3">' +
-    //       '<div class="form-group">' +
-    //           '<label>Event</label>' +
-    //           '<select class="form-control select">' +
-    //               '<option>Select</option>' +
-    //               '<option>Wedding</option>' +
-    //               '<option>Engagement</option>' +
-    //               '<option>Reception</option>' +
-    //           '</select>' +
-    //       '</div>' +
-    //   '</div>' +
-    //   '<div class="col-12 col-md-3 col-lg-3">' +
-    //       '<div class="form-group">' +
-    //           '<label>Event Type</label>' +
-    //           '<select class="form-control select">' +
-    //               '<option>Select</option>' +
-    //               '<option>Groom Side</option>' +
-    //               '<option>Bride Side</option>' +
-    //               '<option>Groom & Bride</option>' +
-    //           '</select>' +
-    //       '</div> ' +
-    //   '</div>' +
-    //   '<div class="col-12 col-md-3 col-lg-3">' +
-    //       '<div class="form-group">' +
-    //           '<label>Caste/Religion</label>' +
-    //           '<select class="form-control select">' +
-    //               '<option>Select</option>' +
-    //               '<option>Islam/Muslim</option>' +
-    //               '<option>Hindu/Ezhava</option>' +
-    //               '<option>Hindu/Nair</option>' +
-    //               '<option>Hindu/General</option>' +
-    //               '<option>Christian/General</option>' +
-    //               '<option>Christian/Penthacost</option>' +
-    //           '</select>' +
-    //       '</div> ' +
-    //   '</div>' +
-    //   '<div class="col-12 col-md-3 col-lg-3">' +
-    //       '<div class="form-group">' +
-    //           '<label>Event Date</label>' +
-    //           '<div class="bookingrange btn btn-white btn-sm mb-3">' +
-    //               '<i class="far fa-calendar-alt mr-2"></i>' +
-    //               '<input style="cursor: pointer;" name="daterangeInput" id="daterange" daterangepicker [options]="options" (selected)="selectedDate($event, daterange)" />' +
-    //               '<i class="fas fa-chevron-down ml-2"></i>' +
-    //           '</div>' +
-    //       '</div> '+
-    //   '</div>' +
-    //       '</div>' +
-    //     '</div>' +
-    //     '<div class="col-12 col-md-2 col-lg-1"><label class="d-md-block d-sm-none d-none">&nbsp;</label><a href="#" class="btn btn-danger trash"><i class="far fa-trash-alt"></i></a></div>' +
-    //   '</div>';
-      
-    //       $(".education-info").append(educationcontent);
-    //       return false;
-    //   });
+    this.apiService.getServices().subscribe((data: any[]) => {
+      console.log(data,'response')
+    });
+    this.apiService.getEventList().subscribe((data:any[]) =>{
+      console.log(data, 'event list')
+      this.eventList = data
+    })
   }
 
   

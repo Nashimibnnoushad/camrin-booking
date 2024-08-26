@@ -28,21 +28,21 @@
                         <div class="row mt-2">
                             <div class="col-4 event-card">
                                 <div class="features-title">Common Deliverables</div>
-                                <div class="col-auto" *ngFor="let deliverable of selectedPackage.deliverablePricingSummaryList">
+                                <div class="col-auto" *ngFor="let deliverable of selectedPackage.deliverablePricingSummaryList, let i=index">
                                     <label class="custom-checkbox">
-                                      <input type="checkbox" checked name={{deliverable.deliverableName}} (change)="onCheckboxClicked($event)">
+                                      <input type="checkbox" checked="deliverable.isAdded" name={{deliverable.deliverableName}} (change)="onDeliverableClicked($event, i)">
                                       <span class="checkbox-checkmark"></span> {{deliverable.deliverableName}}
-                                      <input type="number" id="number-input" class="number-input" value={{deliverable.count}} min="0">
+                                      <input type="number" id="number-input" class="number-input" [attr.disabled]="deliverable.count === 0 ? true : null" value={{deliverable.count}} min="1" (change)="onDeliverableCountChanged($event, i)">
                                     </label>
                               </div>
                             </div>
-                            <div class="col-4 event-card" *ngFor="let event of selectedPackage.events">
+                            <div class="col-4 event-card" *ngFor="let event of selectedPackage.events, let e=index">
                                 <div class="features-title">{{event.eventName}}</div>
-                                <div class="col-auto" *ngFor="let services of event.services">
+                                <div class="col-auto" *ngFor="let services of event.services, let i=index">
                                     <label class="custom-checkbox">
-                                      <input type="checkbox" checked name={{services.service}} (change)="onCheckboxClicked($event)">
+                                      <input type="checkbox" checked="services.isAdded" name={{services.service}} (change)="onServicesClicked($event,e,i)">
                                       <span class="checkbox-checkmark"></span> {{services.service}}
-                                      <input type="number" id="number-input" class="number-input" value={{services.count}} min="0">
+                                      <input type="number" id="number-input" class="number-input" [attr.disabled]="services.count === 0 ? true : null" value={{services.count}} min="1" (change)="onServiceCountChanged($event,e,i)">
                                     </label>
                               </div>
                             </div>

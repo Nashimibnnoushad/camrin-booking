@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { PagesRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
 import { VoiceCallComponent } from './voice-call/voice-call.component';
@@ -17,7 +16,8 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { TermConditionComponent } from './term-condition/term-condition.component';
 import { PricingPageComponent } from './pricing-page/pricing-page.component';
 import { PackagePageComponent } from './package-page/package-page.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,9 @@ import { PackagePageComponent } from './package-page/package-page.component';
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    HttpClientModule,
+    FormsModule
   ]
 })
 export class PagesModule { }
