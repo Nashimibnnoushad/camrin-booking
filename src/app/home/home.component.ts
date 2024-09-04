@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 import { LoginComponent } from '../all-modules/pages/login/login.component';
 @Component({
   selector: 'app-home',
@@ -13,15 +14,40 @@ export class HomeComponent implements OnInit {
   eventList: any = [];
   eventType: any = '';
   caste: any = '';
+  loading: any = true;
+  isDisabled: any = true;
   enquiryList: any = [{
     eventId: '',
     eventDate: ''
   }]
+  
+
+  sessionDuration = 60 * 60 * 1000; // 1 hour in milliseconds
 
   public options: any = {
     locale: { format: 'DD-MM-YYYY' },
     alwaysShowCalendars: false,
   };
+
+  public getSessionData(key: string): any | null {
+    const data = sessionStorage.getItem(`${key}_data`);
+    const timestampString = sessionStorage.getItem(`${key}_timestamp`);
+    const timestamp = timestampString ? parseInt(timestampString, 10) : NaN;
+    const now = new Date().getTime();
+
+    if (data) {
+        // Check if the timestamp is a valid number and the session has not expired
+        if (!isNaN(timestamp) && now - timestamp < this.sessionDuration) {
+            return JSON.parse(data);
+        } else {
+            // Session expired or invalid timestamp
+            sessionStorage.removeItem(`${key}_data`);
+            sessionStorage.removeItem(`${key}_timestamp`);
+            return null; // or handle session expiration as needed
+        }
+    }
+    return null; // No data found
+}
 
   public selectedDate(value: any, datepicker?: any) {
     datepicker.start = value.start;
@@ -32,10 +58,7 @@ export class HomeComponent implements OnInit {
     this.daterange.label = value.label;
   }
 
-  constructor(private apiService: ApiService,private modalService: NgbModal) {
-    localStorage.removeItem('camrinToken')
-    localStorage.removeItem('camrinEnquiryData')
-    localStorage.removeItem('camrinSelectedPackage')
+  constructor(private apiService: ApiService,private modalService: NgbModal,private router: Router) {
    }
 
   
@@ -50,13 +73,14 @@ export class HomeComponent implements OnInit {
     // this.enquiryList = [...this.enquiryList.push(newEnquiryData)]
     console.log(tempArray, 'enquiry list')
     this.enquiryList = tempArray
-
+    this.checkButtonStatus()
   }
 
   deleteEnquiry(index:any){
     let tempArray = [...this.enquiryList]
     tempArray.splice(index,1)
     this.enquiryList = tempArray
+    this.checkButtonStatus()
   }
 
   onSelectEventChange(event: Event, index:any): void {
@@ -66,18 +90,20 @@ export class HomeComponent implements OnInit {
     tempValue.eventId = select.value
     tempArray[index] = tempValue
     this.enquiryList = tempArray
-    console.log('updated array:', this.enquiryList);
+    this.checkButtonStatus()
   }
 
-  onSelectEventTypeChange(event: Event, index:any): void {
+  onSelectEventTypeChange(event: Event): void {
     const select = event.target as HTMLSelectElement;
     console.log(select.value,'event')
     this.eventType = select.value
+    this.checkButtonStatus()
   }
 
-  onSelectCasteChange(event: Event, index:any): void {
+  onSelectCasteChange(event: Event): void {
     const select = event.target as HTMLSelectElement;
     this.caste = select.value
+    this.checkButtonStatus()
   }
 
   SendDataonChange(event: any, index: any) {
@@ -87,21 +113,39 @@ export class HomeComponent implements OnInit {
     tempValue.eventDate = dateValue
     tempArray[index] = tempValue
     this.enquiryList = tempArray
-    console.log('updated array:', this.enquiryList);
+    this.checkButtonStatus()
   }
 
   openLoginModal(): void {
-    const modalRef = this.modalService.open(LoginComponent, {
-      size: 'lg', // Large modal
-      centered: true // Center the modal
-    });
-    // Pass data to the modal instance
-    let sendData = {
-      'eventTypeId': this.eventType,
-      // 'caste': this.caste,
-      'eventDetails': this.enquiryList
+    const token = this.getSessionData('camrinToken');
+    if(token){
+      let sendData = {
+        'eventTypeId': this.eventType,
+        // 'caste': this.caste,
+        'eventDetails': this.enquiryList
+      }
+      localStorage.setItem(
+        'camrinEnquiryData',
+        JSON.stringify(sendData)
+      );
+      const url = this.router
+      .createUrlTree(['/pages/pricing-page'])
+      .toString();
+    window.location.href = url;
     }
-    modalRef.componentInstance.enquiryData = sendData;
+    else{
+      const modalRef = this.modalService.open(LoginComponent, {
+        size: 'lg', // Large modal
+        centered: true // Center the modal
+      });
+      // Pass data to the modal instance
+      let sendData = {
+        'eventTypeId': this.eventType,
+        // 'caste': this.caste,
+        'eventDetails': this.enquiryList
+      }
+      modalRef.componentInstance.enquiryData = sendData;
+    }
   }
 
   getPackageDetails(){
@@ -116,6 +160,29 @@ export class HomeComponent implements OnInit {
       console.log(data, 'package details list')
     })
           console.log(this.enquiryList,'enquirylist')                                                                                                                                                                                            
+  }
+
+  checkButtonStatus(){
+    let validated = this.validate()
+    console.log(validated,'validated')
+    if(validated){
+      this.isDisabled = false
+    }
+    else{
+      this.isDisabled = true
+    }
+  }
+
+  validate(){
+    if(this.eventType !== '' && this.caste !== ''){
+      return this.enquiryList.every((item:any )=> {
+        // Check each property in the object
+        return Object.values(item).every(value => value !== null && value !== undefined && value !== '');
+      });
+    }
+    else{
+      return false
+    }
   }
 
 
@@ -260,14 +327,14 @@ export class HomeComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.apiService.getServices().subscribe((data: any[]) => {
-      console.log(data,'response')
-    });
     this.apiService.getEventList().subscribe((data:any[]) =>{
       console.log(data, 'event list')
       this.eventList = data
+      this.loading = false
     })
   }
+
+  
 
   
   

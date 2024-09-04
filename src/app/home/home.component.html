@@ -85,50 +85,66 @@
 <!-- Our Colleges -->
 <section class="section college">
 <div class="container">
-        <div class="row" style="margin-top: -2%;">
+    <div class="loader-div" *ngIf="loading === true">
+    <div class="loader">
+        <div class="half"></div>
+        <div class="half"></div>
+    </div>
+    <div style="color: black;">Loading .....</div>
+    </div>
+        <div class="row" style="margin-top: -2%;" *ngIf="loading === false">
             <div class="col-12">
                 <div class="card enquiry-card">
                     <div class="card-body">
-                        <h4 class="card-title">Mark the Calender and Get Best Packages</h4>
+                        <div class="row form-row">
+                            <div class="col-6 col-md-4 col-lg-4">
+                                <h4 class="card-title">Mark the Calender and Get Best Packages <span class="ml-2">|</span></h4>                               
+                            </div>
+                            <div class="col-2 col-md-1 col-lg-1">
+                                <label>Event Type<span class="mandatory">*</span></label>
+                            </div>
+                            <div class="col-6 col-md-2 col-lg-2" style="left: -15px;bottom: 5px;">
+                                <div class="form-group">                                    
+                                    <select class="form-control select" [value]='eventType' (change)="onSelectEventTypeChange($event)">
+                                        <option value="">Select</option>
+                                        <option value="1">Single Side</option>
+                                        <option value="2">Groom & Bride</option>
+                                    </select>
+                                </div> 
+                            </div>
+                            <div class="col-2 col-md-1 col-lg-1">
+                                <label>Caste/Religion<span class="mandatory">*</span></label>
+                            </div>
+                            <div class="col-6 col-md-2 col-lg-2" style="left: 10px;bottom: 5px;">
+                                <div class="form-group">
+                                    <select class="form-control select" [value]="caste" (change)="onSelectCasteChange($event)">
+                                        <option value="">Select</option>
+                                        <option value="Islam/Muslim">Islam/Muslim</option>
+                                        <option value="Hindu/Ezhava">Hindu/Ezhava</option>
+                                        <option value="Hindu/Nair">Hindu/Nair</option>
+                                        <option value="Hindu/General">Hindu/General</option>
+                                        <option value="Christian/General">Christian/General</option>
+                                        <option value="Christian/Penthacost">Christian/Penthacost</option>
+                                    </select>
+                                </div> 
+                            </div>
+                        </div>
+                        
                         <div class="education-info">
                                     <div *ngFor="let enquiry of enquiryList; let i=index" class="row form-row">
+                                        
                                         <div class="col-6 col-md-3 col-lg-3">
                                             <div class="form-group">
-                                                <label>Event Type</label>
-                                                <select class="form-control select" [value]='eventType' (change)="onSelectEventTypeChange($event, i)">
-                                                    <option value="">Select</option>
-                                                    <option value="1">Groom Side</option>
-                                                    <option value="2">Bride Side</option>
-                                                    <option value="3">Groom & Bride</option>
-                                                </select>
-                                            </div> 
-                                        </div>
-                                        <div class="col-6 col-md-3 col-lg-3">
-                                            <div class="form-group">
-                                                <label>Caste/Religion</label>
-                                                <select class="form-control select" [value]="caste" (change)="onSelectCasteChange($event, i)">
-                                                    <option value="">Select</option>
-                                                    <option value="Islam/Muslim">Islam/Muslim</option>
-                                                    <option value="Hindu/Ezhava">Hindu/Ezhava</option>
-                                                    <option value="Hindu/Nair">Hindu/Nair</option>
-                                                    <option value="Hindu/General">Hindu/General</option>
-                                                    <option value="Christian/General">Christian/General</option>
-                                                    <option value="Christian/Penthacost">Christian/Penthacost</option>
-                                                </select>
-                                            </div> 
-                                        </div>
-                                        <div class="col-6 col-md-3 col-lg-3">
-                                            <div class="form-group">
-                                                <label>Event</label>
+                                                <label>Event<span class="mandatory">*</span></label>
                                                 <select class="form-control select" (change)="onSelectEventChange($event, i)">
                                                     <option value="">Select</option>
                                                     <option *ngFor="let event of eventList" [value]="event.eventId">{{event.displayName}}</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-6 col-md-2 col-lg-2">
+                                        <div class="col-6 col-md-3 col-lg-3">
                                             <div class="form-group">
-                                                <label>Event Date</label>
+                                                <label>Event Date<span class="mandatory">*</span></label>
                                                     <input class="enquiry-date" type="date" (change)="SendDataonChange($event, i)"/>
                                             </div> 
                                         </div>
@@ -139,7 +155,7 @@
                         </div>
                         <div class="add-more" style="cursor: pointer;">
                             <a (click)="addMoreEnquiry()" class="add-education"><i class="fa fa-plus-circle"></i> Add More</a>
-                            <div class="btn-item" style="float: right;margin-top: 0px;">
+                            <div [ngClass]="{ 'disabled': isDisabled , 'btn-item': !isDisabled}" style="float: right;margin-top: 0px;">
                                 <a class="btn package-btn" (click)="openLoginModal()">Get Packages</a>
                             </div>
                         </div>

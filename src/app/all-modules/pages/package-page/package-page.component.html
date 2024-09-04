@@ -1,13 +1,20 @@
-<div class="container">
+<div class="loader-div" *ngIf="loading === true">
+    <div class="loader">
+      <div class="half"></div>
+      <div class="half"></div>
+    </div>
+    <div style="color: black">Loading .....</div>
+  </div>
+<div *ngIf="loading === false" class="container">
     <div class="row" style="margin-top: 2%;">
         <div class="col-12">
             <div class="card enquiry-card" style="background-color: #11524126;">
                 <div class="card-body">
-                    <h4 class="card-title">Hi Nashim K N, Customize your Package - Gold</h4>
+                    <h4 class="card-title">Hi Nashim K N, Customize your Package - {{selectedPackage.packageName}}</h4>
                     <div class="education-info">
                         <div class="row">
                             <div class="col-3">
-                                <label><span style="font-weight: bolder;">Event Type: </span>Bride & Groom</label>
+                                <label><span style="font-weight: bolder;">Event Type: </span>{{selectedPackage.eventType}}</label>
                             </div>
                             <div class="col-3">
                                 <label><span style="font-weight: bolder;">Event: </span>Engagement - Wedding - Reception</label>
@@ -50,6 +57,9 @@
                         </div>
                     </div>
 
+                </div>
+                <div class="btn-item" style="float: right;margin-top: 0px;">
+                    <a class="btn package-btn" (click)="openConfirmationModal()">Submit Quote</a>
                 </div>
             </div>
         </div>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../../services.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
+import { ConfirmationComponent } from '../confirmation/confirmation.component';
 import data from './data.json';
 @Component({
   selector: 'app-package-page',
@@ -8,8 +12,9 @@ import data from './data.json';
 export class PackagePageComponent implements OnInit {
 
   selectedPackage: any = localStorage.getItem('camrinSelectedPackage')
+  loading: any = false
 
-  constructor() {
+  constructor(private apiService: ApiService,private modalService: NgbModal,private router: Router) {
     // this.formatData()
     this.selectedPackage = JSON.parse(this.selectedPackage)
    }
@@ -108,6 +113,39 @@ export class PackagePageComponent implements OnInit {
     }
   
     return filterObject(packageData)
+  }
+
+
+  openConfirmationModal(): void {
+    // const token = this.getSessionData('camrinToken');
+    // if(token){
+    //   let sendData = {
+    //     'eventTypeId': this.eventType,
+    //     // 'caste': this.caste,
+    //     'eventDetails': this.enquiryList
+    //   }
+    //   localStorage.setItem(
+    //     'camrinEnquiryData',
+    //     JSON.stringify(sendData)
+    //   );
+    //   const url = this.router
+    //   .createUrlTree(['/pages/pricing-page'])
+    //   .toString();
+    // window.location.href = url;
+    // }
+    // else{
+      const modalRef = this.modalService.open(ConfirmationComponent, {
+        size: 'lg', // Large modal
+        centered: true // Center the modal
+      });
+      // Pass data to the modal instance
+      let sendData = {
+        // 'eventTypeId': this.eventType,
+        // 'caste': this.caste,
+        // 'eventDetails': this.enquiryList
+      }
+      modalRef.componentInstance.enquiryData = sendData;
+    // }
   }
   
 

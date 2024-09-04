@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h2>{{ package.packageName }}</h2>
+        <p>{{ package.eventType }}</p>
+      </div>
+      <div class="card-body">
+        <div class="price-info">
+          <h4>Actual Price: <span class="actual-price">{{ package.actualPrice | currency:'INR' }}</span></h4>
+          <h4>Offer Price: <span>{{ package.offerPrice | currency:'INR' }}</span></h4>
+        </div>
+        <div class="events">
+          <h3>Events</h3>
+          <div *ngFor="let event of package.events" class="event">
+            <h4>{{ event.eventName }}</h4>
+            <div class="services">
+              <div *ngFor="let service of event.services" class="service">
+                <p>{{ service.service }} x {{ service.count }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="deliverables">
+            <h3>Deliverables</h3>
+            <div class="deliverable-grid">
+              <div *ngFor="let deliverable of package.deliverablePricingSummaryList" class="deliverable-item">
+                <p>{{ deliverable.deliverableName }}</p>
+                <p>Count: <span>{{ deliverable.count }}</span></p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

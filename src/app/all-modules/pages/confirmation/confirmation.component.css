@@ -1,0 +1,32 @@
+.success-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #e8f5e9;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .success-icon {
+    font-size: 48px;
+    color: #4caf50;
+    margin-bottom: 20px;
+  }
+  h2 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+  }
+  p {
+    margin-bottom: 20px;
+  }
+  button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #45a049;
+  }

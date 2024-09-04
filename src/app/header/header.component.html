@@ -110,9 +110,16 @@
                 </li> -->
             </ul>
         </div>		 
-        <ul class="nav header-navbar-rht">
-            <li><a routerLink='/pages/login'>Log in</a></li>
-            <li><a routerLink='/pages/register' class="login-btn">Signup </a></li>
+        <ul *ngIf="token" class="nav header-navbar-rht">
+            <div class="avatar avatar-sm mr-1">
+                <img class="avatar-img rounded-circle" alt="User Image" src="../../assets/img/icon/avatar.png">
+            </div>
+            <li><a >Hi, Nashim</a></li>
+            <li><a style="cursor: pointer;" class="login-btn" (click)="logout()">Logout </a></li>
+        </ul>
+        <ul *ngIf="!token" class="nav header-navbar-rht">
+            <li><a style="cursor: pointer;" (click)="openLoginModal()">Log in</a></li>
+            <li><a style="cursor: pointer;" class="login-btn" (click)="openLoginModal()">Signup</a></li>
         </ul>
     </nav>
 </header>

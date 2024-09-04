@@ -18,6 +18,8 @@ import { PricingPageComponent } from './pricing-page/pricing-page.component';
 import { PackagePageComponent } from './package-page/package-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { PackageViewComponent } from './package-view/package-view.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { FormsModule } from '@angular/forms';
     PrivacyPolicyComponent,
     TermConditionComponent,
     PricingPageComponent,
-    PackagePageComponent
+    PackagePageComponent,
+    ConfirmationComponent,
+    PackageViewComponent
   ],
   imports: [
     CommonModule,

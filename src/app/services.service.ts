@@ -7,11 +7,31 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  apiUrl = 'http://18.190.106.76:2000/portal/v1';
+  apiUrl = 'http://portal.camrinfilms.com:2000/portal/v1';
+  sessionDuration = 60 * 60 * 1000; // 1 hour in milliseconds
 
   constructor(private http: HttpClient) { }
 
-  token: any = localStorage.getItem('camrinToken')
+  public getSessionData(key: string): any | null {
+    const data = sessionStorage.getItem(`${key}_data`);
+    const timestampString = sessionStorage.getItem(`${key}_timestamp`);
+    const timestamp = timestampString ? parseInt(timestampString, 10) : NaN;
+    const now = new Date().getTime();
+
+    if (data) {
+        // Check if the timestamp is a valid number and the session has not expired
+        if (!isNaN(timestamp) && now - timestamp < this.sessionDuration) {
+            return JSON.parse(data);
+        } else {
+            // Session expired or invalid timestamp
+            sessionStorage.removeItem(`${key}_data`);
+            sessionStorage.removeItem(`${key}_timestamp`);
+            return null; // or handle session expiration as needed
+        }
+    }
+    return null; // No data found
+} 
+  token: any = this.getSessionData('camrinToken');
   getEventList(): Observable<any[]> {
     const headers = new HttpHeaders({
       // 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJtZW1iZXJzaGlwTnVtYmVyIjoxNDQ4NDMsInJvbGUiOiJtZW1iZXIiLCJlbWFpbCI6ImplcmFsZEBnbWFpbC5jb20iLCJzdWIiOiJqZXJhbGRAZ21haWwuY29tIiwiaWF0IjoxNzI0NDM0NzY1LCJleHAiOjE3MjQ0MzgzNjV9.aFCBKNMg05_Jl4C3trzt4V6o8NM5kyZLopOk0X-7t_8',

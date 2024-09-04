@@ -12,6 +12,7 @@ export class PricingPageComponent implements OnInit {
   
   customPackageAmount: number = 0;
   packageList: any
+  loading: any = true
   enquiryData: any = localStorage.getItem('camrinEnquiryData')
 
   constructor(private apiService: ApiService, private router: Router) { 
@@ -19,9 +20,11 @@ export class PricingPageComponent implements OnInit {
   }
 
   getPackageDetails(){
+    this.loading = true
     this.apiService.getPackages(JSON.parse(this.enquiryData)).subscribe((data:any) =>{
       console.log(data, 'package details list')
       this.packageList = data.summarizePackages
+      this.loading = false
     })
   }
 
