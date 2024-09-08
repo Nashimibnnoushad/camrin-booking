@@ -3,6 +3,7 @@ import { ApiService } from '../../../services.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { PackageViewComponent } from '../../pages/package-view/package-view.component';
+import { WhatsappComponent } from '../../pages/whatsapp/whatsapp.component';
 @Component({
   selector: 'app-student-dashboard',
   templateUrl: './student-dashboard.component.html',
@@ -45,6 +46,21 @@ export class StudentDashboardComponent implements OnInit {
         modalRef.componentInstance.enquiryData = sendData;
       // }
   }
+
+  openWhatsappModal(): void{
+      const modalRef = this.modalService.open(WhatsappComponent, {
+        size: 'lg', // Large modal
+        centered: true // Center the modal
+      });
+      // Pass data to the modal instance
+      let sendData = {
+        "package": "Diamond",
+        "eventDate": "10/10/2024",
+        "eventName" : "Wedding"
+      }
+      modalRef.componentInstance.enquiryData = sendData;
+    // }
+}
 
   ngOnInit(): void {
   }

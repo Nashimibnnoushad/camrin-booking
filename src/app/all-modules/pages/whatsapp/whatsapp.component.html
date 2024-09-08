@@ -1,0 +1,9 @@
+<div class="success-container">
+    <div class="success-icon">
+        <img class="whatsapp" src="../../../../assets/img/whatsapp.png"/>
+    </div>
+    <h2>Send Whatsapp Message</h2>
+    <!-- <input type="text-area" class="form-control floating" [(ngModel)]="message" name="message" id="message"> -->
+    <textarea class="form-control floating whatsapp-textarea" [(ngModel)]="message" name="message" id="message"></textarea>
+    <button (click)="sendMessage()">Send</button>
+  </div>

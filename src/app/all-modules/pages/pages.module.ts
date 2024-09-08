@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { PackageViewComponent } from './package-view/package-view.component';
+import { WhatsappComponent } from './whatsapp/whatsapp.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PackageViewComponent } from './package-view/package-view.component';
     PricingPageComponent,
     PackagePageComponent,
     ConfirmationComponent,
-    PackageViewComponent
+    PackageViewComponent,
+    WhatsappComponent
   ],
   imports: [
     CommonModule,
