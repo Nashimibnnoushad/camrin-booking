@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  apiUrl = 'http://portal.camrinfilms.com:2000/portal/v1';
+  apiUrl = 'https://portal.camrinfilms.com:2000/portal/v1';
   sessionDuration = 60 * 60 * 1000; // 1 hour in milliseconds
 
   constructor(private http: HttpClient) { }
