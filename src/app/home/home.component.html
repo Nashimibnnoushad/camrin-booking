@@ -96,7 +96,7 @@
             <div class="col-12">
                 <div class="card enquiry-card">
                     <div class="card-body">
-                        <div class="row form-row">
+                        <div class="row form-row mobile-view">
                             <div class="col-6 col-md-4 col-lg-4">
                                 <h4 class="card-title">Mark the Calender and Get Best Packages <span class="ml-2">|</span></h4>                               
                             </div>
@@ -129,11 +129,42 @@
                                 </div> 
                             </div>
                         </div>
+                        <div class="container web-view">
+                            <div class="row">
+                              <div class="col-12 mb-3">
+                                <h4 class="card-title">Mark the Calendar and Get Best Packages</h4>
+                              </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                              <div class="col-6 col-md-4 mb-2">
+                                <label for="eventType">Event Type<span class="text-danger">*</span></label>
+                                <select class="form-control" id="eventType" [value]='eventType' (change)="onSelectEventTypeChange($event)">
+                                  <option value="">Select</option>
+                                  <option value="1">Single Side</option>
+                                  <option value="2">Groom & Bride</option>
+                                </select>
+                              </div>
+                              
+                              <div class="col-6 col-md-4">
+                                <label for="caste">Caste/Religion<span class="text-danger">*</span></label>
+                                <select class="form-control" id="caste" [value]="caste" (change)="onSelectCasteChange($event)">
+                                  <option value="">Select</option>
+                                  <option value="Islam/Muslim">Islam/Muslim</option>
+                                  <option value="Hindu/Ezhava">Hindu/Ezhava</option>
+                                  <option value="Hindu/Nair">Hindu/Nair</option>
+                                  <option value="Hindu/General">Hindu/General</option>
+                                  <option value="Christian/General">Christian/General</option>
+                                  <option value="Christian/Penthacost">Christian/Penthacost</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
                         
                         <div class="education-info">
                                     <div *ngFor="let enquiry of enquiryList; let i=index" class="row form-row">
                                         
-                                        <div class="col-6 col-md-3 col-lg-3">
+                                        <div class="col-5 col-md-3 col-lg-3">
                                             <div class="form-group">
                                                 <label>Event<span class="mandatory">*</span></label>
                                                 <select class="form-control select" (change)="onSelectEventChange($event, i)">
@@ -148,7 +179,7 @@
                                                     <input class="enquiry-date" type="date" (change)="SendDataonChange($event, i)"/>
                                             </div> 
                                         </div>
-                                        <div *ngIf="i!==0" class="col-12 col-md-2 col-lg-1" style="margin-top: 28px; padding-left: 20px;">
+                                        <div *ngIf="i!==0" class="col-1 col-md-2 col-lg-1" style="margin-top: 28px; padding-left: 5px;">
                                             <a (click)="deleteEnquiry(i)" class="btn btn-danger trash"><i class="far fa-trash-alt"></i></a>
                                         </div>
                                     </div>

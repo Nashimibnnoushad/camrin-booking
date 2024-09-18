@@ -214,73 +214,60 @@
   </div>
   <div style="color: black">Loading .....</div>
 </div>
-<div *ngIf="loading === false" class="content" style="background-color: #333333;padding: '90px 0px';">
+<div *ngIf="loading === false" class="content mobile-view" style="background-color: #333333;padding: '90px 0px';">
   <div class="container">
     <div class="container-fluid">
       <div class="container">
         <div class="pricing-table" style="color: white">
-          <div
-            *ngFor="let package of packageList"
-            [ngClass]="{
+          <div class="row">
+            <div class="col-12 mb-3" *ngFor="let package of packageList" [ngClass]="{
               plan: !package.recommended,
               'plan-recommended': package.recommended
-            }"
-          >
-            <div *ngIf="package.recommended === true" class="best-value">Recommended</div>
-            <div class="plan-name" style="text-align: center !important">
-              {{ package.packageName }}
-            </div>
-            <div class="plan-description" style="text-align: center !important">
-              {{ package.eventType }}
-            </div>
-            <div class="actual-price" style="text-align: center !important">
-              {{ package.actualPrice | currency:'INR'}}
-            </div>
-            <div class="price yellow" style="text-align: center !important">
-              {{ package.offerPrice | currency:'INR'}}
-            </div>
-            <div class="billing-cycle" style="text-align: center !important">
-              (Offer rates will vary depending on the event date)
-            </div>
-            <button
-              [ngClass]="{
+            }">
+              <div *ngIf="package.recommended === true" class="best-value">Recommended</div>
+              <div class="plan-name" style="text-align: center !important">
+                {{ package.packageName }}
+              </div>
+              <div class="plan-description" style="text-align: center !important">
+                {{ package.eventType }}
+              </div>
+              <div class="actual-price" style="text-align: center !important">
+                {{ package.actualPrice | currency:'INR'}}
+              </div>
+              <div class="price yellow" style="text-align: center !important">
+                {{ package.offerPrice | currency:'INR'}}
+              </div>
+              <div class="billing-cycle" style="text-align: center !important">
+                (Offer rates will vary depending on the event date)
+              </div>
+              <button [ngClass]="{
                 'select-btn': !package.recommended,
                 'select-btn-recommended': package.recommended
-              }"
-              (click)="goToPackageCustomPage(package)"
-            >
-              Select
-            </button>
-            <div class="features-title">Plan includes:</div>
-            <div
-              [ngClass]="{
+              }" (click)="goToPackageCustomPage(package)">
+                Select
+              </button>
+              <div class="features-title">Plan includes:</div>
+              <div [ngClass]="{
                 'event-card': !package.recommended,
                 'event-card-recommended': package.recommended
-              }"
-              *ngFor="let events of package.events"
-            >
-              <div class="features-title" style="text-align: center !important">
-                {{ events.eventName }}
-              </div>
-              <div
-                [ngClass]="{
+              }" *ngFor="let events of package.events">
+                <div class="features-title" style="text-align: center !important">
+                  {{ events.eventName }}
+                </div>
+                <div [ngClass]="{
                   'feature-exist': services.count > 0,
                   'feature-not-exist': services.count == 0
-                }"
-                *ngFor="let services of events.services"
-              >
-                {{ services.service }} - {{ services.count }}
+                }" *ngFor="let services of events.services">
+                  {{ services.service }} - {{ services.count }}
+                </div>
               </div>
-            </div>
-            <div class="features-title mt-3">Deliverables:</div>
-            <div
-              *ngFor="let deliverables of package.deliverablePricingSummaryList"
-              [ngClass]="{
+              <div class="features-title mt-3">Deliverables:</div>
+              <div *ngFor="let deliverables of package.deliverablePricingSummaryList" [ngClass]="{
                 'feature-exist': deliverables.count > 0,
                 'feature-not-exist': deliverables.count == 0
-              }"
-            >
-              {{ deliverables.deliverableName }} - {{ deliverables.count }}
+              }">
+                {{ deliverables.deliverableName }} - {{ deliverables.count }}
+              </div>
             </div>
           </div>
         </div>
@@ -288,3 +275,65 @@
     </div>
   </div>
 </div>
+
+<!-- web view -->
+<div *ngIf="loading === false" class="content web-view" style="background-color: #333333;padding: '90px 0px';">
+  <div class="container">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="pricing-table" style="color: white">
+            <div *ngFor="let package of packageList" [ngClass]="{
+              plan: !package.recommended,
+              'plan-recommended': package.recommended
+            }">
+              <div *ngIf="package.recommended === true" class="best-value">Recommended</div>
+              <div class="plan-name" style="text-align: center !important">
+                {{ package.packageName }}
+              </div>
+              <div class="plan-description" style="text-align: center !important">
+                {{ package.eventType }}
+              </div>
+              <div class="actual-price" style="text-align: center !important">
+                {{ package.actualPrice | currency:'INR'}}
+              </div>
+              <div class="price yellow" style="text-align: center !important">
+                {{ package.offerPrice | currency:'INR'}}
+              </div>
+              <div class="billing-cycle" style="text-align: center !important">
+                (Offer rates will vary depending on the event date)
+              </div>
+              <button [ngClass]="{
+                'select-btn': !package.recommended,
+                'select-btn-recommended': package.recommended
+              }" (click)="goToPackageCustomPage(package)">
+                Select
+              </button>
+              <div class="features-title">Plan includes:</div>
+              <div [ngClass]="{
+                'event-card': !package.recommended,
+                'event-card-recommended': package.recommended
+              }" *ngFor="let events of package.events">
+                <div class="features-title" style="text-align: center !important">
+                  {{ events.eventName }}
+                </div>
+                <div [ngClass]="{
+                  'feature-exist': services.count > 0,
+                  'feature-not-exist': services.count == 0
+                }" *ngFor="let services of events.services">
+                  {{ services.service }} - {{ services.count }}
+                </div>
+              </div>
+              <div class="features-title mt-3">Deliverables:</div>
+              <div *ngFor="let deliverables of package.deliverablePricingSummaryList" [ngClass]="{
+                'feature-exist': deliverables.count > 0,
+                'feature-not-exist': deliverables.count == 0
+              }">
+                {{ deliverables.deliverableName }} - {{ deliverables.count }}
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

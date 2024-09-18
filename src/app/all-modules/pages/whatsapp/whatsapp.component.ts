@@ -26,16 +26,14 @@ export class WhatsappComponent implements OnInit {
   sendMessage() {
     let sendmsg = this.message
     const encodedMessage = encodeURIComponent(sendmsg);
-    window.open(`https://wa.me/917510615035??text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/917510615035?text=${encodedMessage}`, '_blank');
   }
 
   ngOnInit(): void {
     this.message = `Hello Camrin Films,
 
 I'm interested in learning more about your ${this.enquiryData.package} package for a ${this.enquiryData.eventName} event on ${this.enquiryData.eventDate}. Could you please reply me with more details?
-
 Thank you for your time. I look forward to hearing from you soon.
-
 Best regards,
 Nashim K N`;
   }

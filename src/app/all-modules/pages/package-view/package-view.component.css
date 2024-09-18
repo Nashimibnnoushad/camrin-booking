@@ -64,3 +64,17 @@
     color: #999; /* Grey color to indicate the original price */
     text-decoration: line-through; /* Strikethrough the actual price */
   }
+  @media (max-width: 767px) {
+    .close-button{
+      padding-left: 85%;
+      color: white;
+      font-size: larger;
+    }
+  }
+  @media (min-width: 767px) {
+    .close-button{
+      padding-left: 92%;
+      color: white;
+      font-size: larger;
+    }
+  }

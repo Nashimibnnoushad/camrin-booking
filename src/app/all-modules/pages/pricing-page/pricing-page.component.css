@@ -484,3 +484,14 @@ body {
     transform: rotate(405deg);
   }
 }
+
+@media (max-width: 767px) {
+  .web-view {
+    display: none;
+  }
+}
+@media (min-width: 767px) {
+  .mobile-view {
+    display: none;
+  }
+}

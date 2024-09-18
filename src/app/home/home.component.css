@@ -192,3 +192,26 @@
       transform: rotate(405deg);
     }
   }
+
+  @media (max-width: 767px) {
+    .mobile-view{
+      display: none;
+    }
+    .container {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .card-title {
+      font-size: 1.25rem;
+    }
+    
+    select.form-control {
+      height: 45px; /* Larger touch target for mobile */
+    }
+  }
+
+  @media (min-width: 767px) {
+    .web-view{
+      display: none;
+    }
+  }
